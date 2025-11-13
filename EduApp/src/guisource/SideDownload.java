@@ -6,8 +6,8 @@ package guisource;
 
 /**
  *
- * @author Antoi
+ * @author afoud
  */
-public class guiApp {
+public class SideDownload {
     
 }
