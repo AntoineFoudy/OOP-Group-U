@@ -189,7 +189,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         ResourceHubPNL.setBackground(new java.awt.Color(51, 204, 255));
         ResourceHubPNL.setLayout(null);
 
-        ResourceHubNavPNL.setBackground(new java.awt.Color(204, 204, 204));
+        ResourceHubNavPNL.setBackground(new java.awt.Color(102, 102, 102));
         ResourceHubNavPNL.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
         ResourceHubNavPNL.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
