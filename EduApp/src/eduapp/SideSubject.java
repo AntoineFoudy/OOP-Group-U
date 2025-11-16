@@ -245,7 +245,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
                     .addComponent(TutorialLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ManageRecourceLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ResourceHubNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(ResourceHubNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TutorialsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ManageResourcesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
@@ -455,7 +455,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
             }
         });
         ManageResourcesPNL.add(s1chapter1BTN);
-        s1chapter1BTN.setBounds(100, 60, 90, 23);
+        s1chapter1BTN.setBounds(100, 60, 90, 27);
 
         s1chapter2LBL.setText("Chapter 2");
         ManageResourcesPNL.add(s1chapter2LBL);
@@ -463,7 +463,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
 
         s1chapter2BTN.setText("Download");
         ManageResourcesPNL.add(s1chapter2BTN);
-        s1chapter2BTN.setBounds(300, 60, 90, 23);
+        s1chapter2BTN.setBounds(300, 60, 90, 27);
 
         s1chapter3LBL.setText("Chapter 3");
         ManageResourcesPNL.add(s1chapter3LBL);
@@ -471,7 +471,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
 
         s1chapter3BTN.setText("Download");
         ManageResourcesPNL.add(s1chapter3BTN);
-        s1chapter3BTN.setBounds(540, 60, 90, 23);
+        s1chapter3BTN.setBounds(540, 60, 90, 27);
 
         s2chapter1LBL.setText("Chapter 1");
         ManageResourcesPNL.add(s2chapter1LBL);
@@ -484,7 +484,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
             }
         });
         ManageResourcesPNL.add(jButton4);
-        jButton4.setBounds(100, 170, 90, 23);
+        jButton4.setBounds(100, 170, 90, 27);
 
         s2chapter2LBL.setText("Chapter 2");
         ManageResourcesPNL.add(s2chapter2LBL);
@@ -492,7 +492,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
 
         jButton5.setText("Download");
         ManageResourcesPNL.add(jButton5);
-        jButton5.setBounds(300, 170, 90, 23);
+        jButton5.setBounds(300, 170, 90, 27);
 
         s2chapter3LBL.setText("Chapter 3");
         ManageResourcesPNL.add(s2chapter3LBL);
@@ -500,7 +500,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
 
         jButton6.setText("Download");
         ManageResourcesPNL.add(jButton6);
-        jButton6.setBounds(540, 170, 90, 23);
+        jButton6.setBounds(540, 170, 90, 27);
 
         s3chapter1LBL.setText("Chapter 1");
         ManageResourcesPNL.add(s3chapter1LBL);
@@ -513,7 +513,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
             }
         });
         ManageResourcesPNL.add(jButton7);
-        jButton7.setBounds(100, 290, 90, 23);
+        jButton7.setBounds(100, 290, 90, 27);
 
         s3chapter2LBL.setText("Chapter 2");
         ManageResourcesPNL.add(s3chapter2LBL);
@@ -521,7 +521,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
 
         jButton8.setText("Download");
         ManageResourcesPNL.add(jButton8);
-        jButton8.setBounds(300, 290, 90, 23);
+        jButton8.setBounds(300, 290, 90, 27);
 
         s3chapter3LBL.setText("Chapter 3");
         ManageResourcesPNL.add(s3chapter3LBL);
@@ -529,7 +529,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
 
         jButton9.setText("Download");
         ManageResourcesPNL.add(jButton9);
-        jButton9.setBounds(540, 290, 90, 23);
+        jButton9.setBounds(540, 290, 90, 27);
 
         SecondParent.add(ManageResourcesPNL, "card4");
 
@@ -564,7 +564,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
             }
         });
         ReportGeneratorPNL.add(ReportGeneratorFirstNameField);
-        ReportGeneratorFirstNameField.setBounds(130, 90, 120, 22);
+        ReportGeneratorFirstNameField.setBounds(130, 90, 120, 26);
 
         AVGGradeField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         AVGGradeField.addActionListener(new java.awt.event.ActionListener() {
@@ -578,7 +578,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
             }
         });
         ReportGeneratorPNL.add(AVGGradeField);
-        AVGGradeField.setBounds(490, 90, 120, 22);
+        AVGGradeField.setBounds(490, 90, 120, 26);
 
         ReportGeneratorContentLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ReportGeneratorContentLabel.setText("Notes");
@@ -593,7 +593,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
             }
         });
         ReportGeneratorPNL.add(SaveBTN);
-        SaveBTN.setBounds(100, 470, 130, 23);
+        SaveBTN.setBounds(100, 470, 130, 27);
 
         ViewBTN.setText("view");
         ViewBTN.setToolTipText("Please press this view button to populate the table");
@@ -603,7 +603,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
             }
         });
         ReportGeneratorPNL.add(ViewBTN);
-        ViewBTN.setBounds(310, 470, 107, 23);
+        ViewBTN.setBounds(310, 470, 107, 27);
 
         ReportGeneratorTitleLabel.setFont(new java.awt.Font("Bauhaus 93", 1, 36)); // NOI18N
         ReportGeneratorTitleLabel.setForeground(new java.awt.Color(255, 255, 255));

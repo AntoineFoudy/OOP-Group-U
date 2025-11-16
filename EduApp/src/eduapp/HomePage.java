@@ -123,6 +123,11 @@ public class HomePage extends javax.swing.JFrame {
 
         quizLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         quizLBL.setText("Quiz");
+        quizLBL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                quizLBLMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout tab4Layout = new javax.swing.GroupLayout(tab4);
         tab4.setLayout(tab4Layout);
@@ -238,6 +243,13 @@ public class HomePage extends javax.swing.JFrame {
         cs.setVisible(true);//set its visibility to true setVisible(false);//remove the current screen
       
     }//GEN-LAST:event_coreSubjectLBLMouseClicked
+
+    private void quizLBLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quizLBLMouseClicked
+        // TODO add your handling code here:
+        setVisible(false);//remove the current screen
+        SubjectsGUI subjectsGUI = new SubjectsGUI();//Link Sidesubjerct to the home page
+        subjectsGUI.setVisible(true);//set its visibility to true setVisible(false);//remove the current screen
+    }//GEN-LAST:event_quizLBLMouseClicked
 
     /**
      * @param args the command line arguments
