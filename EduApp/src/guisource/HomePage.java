@@ -258,6 +258,9 @@ public class HomePage extends javax.swing.JFrame {
 
     private void flashCardsLBLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flashCardsLBLMouseClicked
         // TODO add your handling code here:
+        FlashcardHome frame_flashcard_home = new FlashcardHome();
+        frame_flashcard_home.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_flashCardsLBLMouseClicked
 
     /**

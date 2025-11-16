@@ -103,14 +103,23 @@ public class FlashcardHome extends javax.swing.JFrame {
 
     private void edit_flashcards_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_flashcards_btnActionPerformed
         // TODO add your handling code here:
+        FlashcardEdit frame_edit = new FlashcardEdit();
+        frame_edit.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_edit_flashcards_btnActionPerformed
 
     private void view_flashcards_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_flashcards_btnActionPerformed
         // TODO add your handling code here:
+         FlashcardView frame_view = new FlashcardView();
+        frame_view.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_view_flashcards_btnActionPerformed
 
     private void main_menu_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_main_menu_btnActionPerformed
         // TODO add your handling code here:
+        HomePage home_page = new HomePage();
+        home_page.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_main_menu_btnActionPerformed
 
     /**

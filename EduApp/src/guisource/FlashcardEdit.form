@@ -54,6 +54,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="delete_btnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="create_btn">
       <Properties>
@@ -68,6 +71,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Create"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="create_btnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="main_menu_btn">
       <Properties>
@@ -82,6 +88,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Main Menu"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="main_menu_btnActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

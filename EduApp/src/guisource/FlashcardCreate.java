@@ -93,6 +93,9 @@ public class FlashcardCreate extends javax.swing.JFrame {
 
     private void add_flashcard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_flashcard_btnActionPerformed
         // TODO add your handling code here:
+        FlashcardHome frame_home = new FlashcardHome();
+        frame_home.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_add_flashcard_btnActionPerformed
 
     private void answer_inputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answer_inputActionPerformed

@@ -59,11 +59,21 @@ public class FlashcardView extends javax.swing.JFrame {
         next_btn.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         next_btn.setForeground(new java.awt.Color(255, 255, 255));
         next_btn.setText("Next");
+        next_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                next_btnActionPerformed(evt);
+            }
+        });
 
         main_menu_btn.setBackground(new java.awt.Color(0, 0, 0));
         main_menu_btn.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         main_menu_btn.setForeground(new java.awt.Color(255, 255, 255));
         main_menu_btn.setText("Main Menu");
+        main_menu_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                main_menu_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,7 +108,20 @@ public class FlashcardView extends javax.swing.JFrame {
 
     private void previous_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previous_btnActionPerformed
         // TODO add your handling code here:
+        question_btn.setText("Question");
     }//GEN-LAST:event_previous_btnActionPerformed
+
+    private void main_menu_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_main_menu_btnActionPerformed
+        // TODO add your handling code here:
+        HomePage home_page = new HomePage();
+        home_page.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_main_menu_btnActionPerformed
+
+    private void next_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_next_btnActionPerformed
+        // TODO add your handling code here:
+        question_btn.setText("Question");
+    }//GEN-LAST:event_next_btnActionPerformed
 
     /**
      * @param args the command line arguments

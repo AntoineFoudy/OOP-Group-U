@@ -126,6 +126,9 @@ public class FlashcardDelete extends javax.swing.JFrame {
 
     private void main_menu_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_main_menu_btnActionPerformed
         // TODO add your handling code here:
+        HomePage home_page = new HomePage();
+        home_page.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_main_menu_btnActionPerformed
 
     /**

@@ -38,16 +38,31 @@ public class FlashcardEdit extends javax.swing.JFrame {
         delete_btn.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         delete_btn.setForeground(new java.awt.Color(255, 255, 255));
         delete_btn.setText("Delete");
+        delete_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_btnActionPerformed(evt);
+            }
+        });
 
         create_btn.setBackground(new java.awt.Color(0, 0, 0));
         create_btn.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         create_btn.setForeground(new java.awt.Color(255, 255, 255));
         create_btn.setText("Create");
+        create_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                create_btnActionPerformed(evt);
+            }
+        });
 
         main_menu_btn.setBackground(new java.awt.Color(0, 0, 0));
         main_menu_btn.setFont(new java.awt.Font("Impact", 0, 14)); // NOI18N
         main_menu_btn.setForeground(new java.awt.Color(255, 255, 255));
         main_menu_btn.setText("Main Menu");
+        main_menu_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                main_menu_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,6 +84,27 @@ public class FlashcardEdit extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void main_menu_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_main_menu_btnActionPerformed
+        // TODO add your handling code here:
+        HomePage home_page = new HomePage();
+        home_page.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_main_menu_btnActionPerformed
+
+    private void delete_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_btnActionPerformed
+        // TODO add your handling code here:
+        FlashcardDelete frame_flashcard_delete = new FlashcardDelete();
+        frame_flashcard_delete.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_delete_btnActionPerformed
+
+    private void create_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_btnActionPerformed
+        // TODO add your handling code here:
+        FlashcardCreate frame_flashcard_create = new FlashcardCreate();
+        frame_flashcard_create.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_create_btnActionPerformed
 
     /**
      * @param args the command line arguments
