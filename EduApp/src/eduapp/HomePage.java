@@ -8,7 +8,7 @@ import guisource.CoreSubjectHome;
 
 /**
  *
- * @author shoaib
+ * @author Mohammad shoaib
  */
 public class HomePage extends javax.swing.JFrame {
 

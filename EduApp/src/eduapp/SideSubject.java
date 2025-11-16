@@ -3,22 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package eduapp;
-//gregory mitchell
 
 /**
  *
- * @author Gregory Mitchell, Gregory created this education Enviorment gui and
- * coded its functionality
+ * @author Mohammad Shoaib
  */
 import eduapp.HomePage;
 import java.awt.Color;//adding for color changing based on selected item in combo box for quiz, green = right, red - wrong
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;//adding for popups within the gui//cant commit
 
-/**
- *
- * @author Gregory Mitchell
- */
 public class SideSubject extends javax.swing.JFrame {//creating the jframe for the warm educaitonal enviorment
 
 
