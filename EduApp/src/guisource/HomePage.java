@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package eduapp;
+package guisource;
 
 import guisource.CoreSubjectHome;
 
@@ -103,6 +103,11 @@ public class HomePage extends javax.swing.JFrame {
 
         flashCardsLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         flashCardsLBL.setText("Flash Cards");
+        flashCardsLBL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                flashCardsLBLMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout tab3Layout = new javax.swing.GroupLayout(tab3);
         tab3.setLayout(tab3Layout);
@@ -250,6 +255,10 @@ public class HomePage extends javax.swing.JFrame {
         SubjectsGUI subjectsGUI = new SubjectsGUI();//Link Sidesubjerct to the home page
         subjectsGUI.setVisible(true);//set its visibility to true setVisible(false);//remove the current screen
     }//GEN-LAST:event_quizLBLMouseClicked
+
+    private void flashCardsLBLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flashCardsLBLMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_flashCardsLBLMouseClicked
 
     /**
      * @param args the command line arguments

@@ -201,6 +201,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Flash Cards"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="flashCardsLBLMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
