@@ -427,11 +427,11 @@ public class FlashcardFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_home_btnActionPerformed
 
     private void view_flashcard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_flashcard_btnActionPerformed
-        jpanel_flashcard.setSelectedIndex(1);
+        jpanel_flashcard.setSelectedIndex(5);
     }//GEN-LAST:event_view_flashcard_btnActionPerformed
 
     private void edit_flashcard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_flashcard_btnActionPerformed
-        jpanel_flashcard.setSelectedIndex(3);
+        jpanel_flashcard.setSelectedIndex(2);
     }//GEN-LAST:event_edit_flashcard_btnActionPerformed
 
     private void main_menu_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_main_menu_btnActionPerformed
