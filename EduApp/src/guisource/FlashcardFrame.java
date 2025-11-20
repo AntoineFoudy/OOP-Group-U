@@ -380,6 +380,11 @@ public class FlashcardFrame extends javax.swing.JFrame {
         jLabel2.setText("Choose what flashcard set you would like to view");
 
         select_view_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Set 1", "Set 2", "Set 3", "Set 4", "Set 5", "Set 6" }));
+        select_view_box.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select_view_boxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -439,6 +444,13 @@ public class FlashcardFrame extends javax.swing.JFrame {
         home_page.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_main_menu_btnActionPerformed
+
+    private void select_view_boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_view_boxActionPerformed
+        // TODO add your handling code here:
+        var flashcard_set_view = (String) select_view_box.getSelectedItem();
+        flashcardlogic.ViewFlashcard fcvfc = new flashcardlogic.ViewFlashcard(flashcard_set_view);
+        
+    }//GEN-LAST:event_select_view_boxActionPerformed
 
     /**
      * @param args the command line arguments
