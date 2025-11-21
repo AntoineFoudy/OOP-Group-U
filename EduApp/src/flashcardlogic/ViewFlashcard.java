@@ -1,17 +1,15 @@
-// For read and parse https://stackoverflow.com/questions/10926353/how-to-read-json-file-into-java-with-simple-json-library
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package flashcardlogic;
 import java.util.HashMap;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.FileNotFoundException;
-import org.json.simple.parser.ParseException;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
+import java.io.*;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.*;
+import java.util.Map;
+
+
 /**
  *
  * @author afoud
@@ -26,29 +24,25 @@ public class ViewFlashcard {
         // Question == Key, Answer == Value
         HashMap<String, String> flashcard_list = new HashMap<String, String>();
         
-
-        JSONParser parser = new JSONParser();
+        InputStream read_json = getClass().getResourceAsStream("flashcard.JSON");
         
         try {
-            Object obj = parser.parse(new FileReader("flashcard.JSON"));
+            JsonReader reader = new JsonReader(new InputStreamReader(read_json, "UTF-8"));
             
-            JSONObject jsonObject = ( JSONObject ) obj;
+            JsonObject jobject = JsonParser.parseReader(reader).getAsJsonObject();
             
-            JSONObject flashcards = ( JSONObject ) jsonObject.get("flashcard");
+            JsonObject set_here = jobject.getAsJsonObject(flashcard_set_view);
             
-            JSONObject flashcard_this_set_view = ( JSONObject ) flashcards.get(flashcard_set_view);
-            
-            // Add in the data for passing all the questions and answer to the hasmap
-            
-            
-            
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
+            for(Map.Entry<String, JsonElement> jelement : set_here.entrySet()) {
+                String question = jelement.getKey();
+                String answer = jelement.getValue().getAsString();
+                flashcard_list.put(question, answer);
+            }
         }
+        catch (IOException e){
+            System.out.println(e);
+        }
+           
     }
     
 }
