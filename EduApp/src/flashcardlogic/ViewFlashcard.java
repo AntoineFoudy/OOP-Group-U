@@ -17,6 +17,8 @@ import java.util.ArrayList;
  */
 public class ViewFlashcard {
     private String flashcard_set_view;
+    private ArrayList<String> flashcard_question;
+    private ArrayList<String> flashcard_answer;
     
     public ViewFlashcard(String flashcard_set_view) {
         this.flashcard_set_view = flashcard_set_view;
@@ -25,8 +27,8 @@ public class ViewFlashcard {
         // HashMap will be how I store the question and answers from the json file
         // Question == Key, Answer == Value
         //HashMap<String, String> flashcard_list = new HashMap<String, String>();
-        ArrayList<String> flashcard_question = new ArrayList<String>();
-        ArrayList<String> flashcard_answer = new ArrayList<String>();
+        this.flashcard_question = new ArrayList<String>();
+        this.flashcard_answer = new ArrayList<String>();
         
         
         InputStream read_json = getClass().getResourceAsStream("flashcard.JSON");
@@ -59,5 +61,11 @@ public class ViewFlashcard {
         }
            
     }
-    
+
+    public ArrayList<String> get_flashcard_question() {
+        return flashcard_question;
+    }
+    public ArrayList<String> get_flashcard_answer() {
+        return flashcard_answer;
+    }
 }

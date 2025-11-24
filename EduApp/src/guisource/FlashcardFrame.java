@@ -4,11 +4,19 @@
  */
 package guisource;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author afoud
  */
 public class FlashcardFrame extends javax.swing.JFrame {
+    
+    private ArrayList<String> view_question;
+    private ArrayList<String> view_answer;
+    private int flashcard_index = 0;
+    private int flashcard_index_max;
+    private int q_a_switch = 0;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FlashcardFrame.class.getName());
 
@@ -167,6 +175,11 @@ public class FlashcardFrame extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(102, 102, 102));
 
         display_text_btn.setText("Question");
+        display_text_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                display_text_btnActionPerformed(evt);
+            }
+        });
 
         previous_btn.setText("Previous");
 
@@ -448,9 +461,24 @@ public class FlashcardFrame extends javax.swing.JFrame {
     private void select_view_boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_view_boxActionPerformed
         // TODO add your handling code here:
         var flashcard_set_view = (String) select_view_box.getSelectedItem();
-        flashcardlogic.ViewFlashcard fcvfc = new flashcardlogic.ViewFlashcard(flashcard_set_view);
+        //flashcardlogic.ViewFlashcard fcvfc = new flashcardlogic.ViewFlashcard(flashcard_set_view);
+        jpanel_flashcard.setSelectedIndex(1);
+        flashcardView(flashcard_set_view);
         
     }//GEN-LAST:event_select_view_boxActionPerformed
+
+    private void display_text_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_display_text_btnActionPerformed
+        // TODO add your handling code here:
+        
+        if (q_a_switch == 0) {
+            display_text_btn.setText(this.view_answer.get(this.flashcard_index));
+            q_a_switch = 1;
+        }
+        else {
+            display_text_btn.setText(this.view_question.get(this.flashcard_index));
+            q_a_switch = 0;
+        }
+    }//GEN-LAST:event_display_text_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -475,6 +503,21 @@ public class FlashcardFrame extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new FlashcardFrame().setVisible(true));
+    }
+    
+    public void flashcardView(String flashcard_set_view) {
+        
+        flashcardlogic.ViewFlashcard fcvfc = new flashcardlogic.ViewFlashcard(flashcard_set_view);
+        
+        this.view_question = new ArrayList<String>(fcvfc.get_flashcard_question());
+        this.view_answer = new ArrayList<String>(fcvfc.get_flashcard_answer());
+        
+        this.flashcard_index_max = view_question.size();
+//        System.out.println(flashcard_index);
+        
+        display_text_btn.setText(view_question.get(flashcard_index));
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
