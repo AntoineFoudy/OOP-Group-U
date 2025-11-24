@@ -8,6 +8,7 @@ import java.io.*;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.*;
 import java.util.Map;
+import java.util.ArrayList;
 
 
 /**
@@ -19,10 +20,14 @@ public class ViewFlashcard {
     
     public ViewFlashcard(String flashcard_set_view) {
         this.flashcard_set_view = flashcard_set_view;
+        System.out.println(flashcard_set_view);
         
         // HashMap will be how I store the question and answers from the json file
         // Question == Key, Answer == Value
-        HashMap<String, String> flashcard_list = new HashMap<String, String>();
+        //HashMap<String, String> flashcard_list = new HashMap<String, String>();
+        ArrayList<String> flashcard_question = new ArrayList<String>();
+        ArrayList<String> flashcard_answer = new ArrayList<String>();
+        
         
         InputStream read_json = getClass().getResourceAsStream("flashcard.JSON");
         
@@ -30,13 +35,23 @@ public class ViewFlashcard {
             JsonReader reader = new JsonReader(new InputStreamReader(read_json, "UTF-8"));
             
             JsonObject jobject = JsonParser.parseReader(reader).getAsJsonObject();
+            System.out.println(jobject.getClass());
             
-            JsonObject set_here = jobject.getAsJsonObject(flashcard_set_view);
+            JsonObject root_json = jobject.getAsJsonObject("flashcard");
             
-            for(Map.Entry<String, JsonElement> jelement : set_here.entrySet()) {
-                String question = jelement.getKey();
-                String answer = jelement.getValue().getAsString();
-                flashcard_list.put(question, answer);
+           JsonObject set_here = root_json.getAsJsonObject(flashcard_set_view);
+           System.out.println(set_here);
+           
+           
+           for(Map.Entry<String, JsonElement> current : set_here.entrySet()) {
+            //JsonObject current = set_here(i).getAsJsonObject();
+            
+               String question = current.getKey();
+               String answer = current.getValue().getAsString();
+//               System.out.println(question);
+//               System.out.println(answer);
+                flashcard_question.add(question);
+                flashcard_answer.add(answer);
             }
         }
         catch (IOException e){
