@@ -46,7 +46,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         ResourceHubNavPNL = new javax.swing.JPanel();
         ManageRecourceLabel = new javax.swing.JLabel();
         TutorialLabel = new javax.swing.JLabel();
-        TutorialsLabel = new javax.swing.JLabel();
+        sideSubjectsLabel = new javax.swing.JLabel();
         ManageResourcesLabel = new javax.swing.JLabel();
         SecondParent = new javax.swing.JPanel();
         TutorialsPNL = new javax.swing.JPanel();
@@ -66,24 +66,11 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         exitBTn8 = new javax.swing.JButton();
         subject1LBL = new javax.swing.JLabel();
         subject2LBL = new javax.swing.JLabel();
-        s1chapter1LBL = new javax.swing.JLabel();
-        s1chapter1BTN = new javax.swing.JButton();
-        s1chapter2LBL = new javax.swing.JLabel();
-        s1chapter2BTN = new javax.swing.JButton();
-        s1chapter3LBL = new javax.swing.JLabel();
-        s1chapter3BTN = new javax.swing.JButton();
-        s2chapter1LBL = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        s2chapter2LBL = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        s2chapter3LBL = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        s3chapter1LBL = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        s3chapter2LBL = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
-        s3chapter3LBL = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
+        CSicon = new javax.swing.JLabel();
+        Chemistryicon = new javax.swing.JLabel();
+        mathicon = new javax.swing.JLabel();
+        introLBL = new javax.swing.JLabel();
+        intro2LBL = new javax.swing.JLabel();
         ReportGeneratorPNL = new javax.swing.JPanel();
         subjectNameLabel = new javax.swing.JLabel();
         chaperLabel = new javax.swing.JLabel();
@@ -203,10 +190,10 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
             }
         });
 
-        TutorialsLabel.setFont(new java.awt.Font("Bauhaus 93", 1, 12)); // NOI18N
-        TutorialsLabel.setForeground(new java.awt.Color(255, 255, 255));
-        TutorialsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TutorialsLabel.setText("Tutorials");
+        sideSubjectsLabel.setFont(new java.awt.Font("Bauhaus 93", 1, 12)); // NOI18N
+        sideSubjectsLabel.setForeground(new java.awt.Color(255, 255, 255));
+        sideSubjectsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sideSubjectsLabel.setText("Tutorials");
 
         ManageResourcesLabel.setFont(new java.awt.Font("Bauhaus 93", 1, 12)); // NOI18N
         ManageResourcesLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -220,7 +207,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
             .addGroup(ResourceHubNavPNLLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(ResourceHubNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(TutorialsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sideSubjectsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TutorialLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 392, Short.MAX_VALUE)
                 .addGroup(ResourceHubNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -240,7 +227,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
                     .addComponent(ManageRecourceLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ResourceHubNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TutorialsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sideSubjectsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ManageResourcesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
@@ -408,7 +395,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         subject3LBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         subject3LBL.setText("Mathematics");
         ManageResourcesPNL.add(subject3LBL);
-        subject3LBL.setBounds(290, 230, 120, 25);
+        subject3LBL.setBounds(290, 250, 120, 25);
 
         exitBTn8.setBackground(new java.awt.Color(255, 51, 51));
         exitBTn8.setText("EXIT");
@@ -429,101 +416,38 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         subject1LBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         subject1LBL.setText("Computer Science");
         ManageResourcesPNL.add(subject1LBL);
-        subject1LBL.setBounds(250, 10, 170, 25);
+        subject1LBL.setBounds(10, 240, 170, 25);
 
         subject2LBL.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         subject2LBL.setForeground(new java.awt.Color(255, 255, 255));
         subject2LBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         subject2LBL.setText(" Chemistry");
         ManageResourcesPNL.add(subject2LBL);
-        subject2LBL.setBounds(290, 120, 120, 25);
+        subject2LBL.setBounds(550, 240, 120, 25);
 
-        s1chapter1LBL.setText("Chapter 1");
-        ManageResourcesPNL.add(s1chapter1LBL);
-        s1chapter1LBL.setBounds(20, 60, 70, 20);
+        CSicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-computer-science-68.png"))); // NOI18N
+        ManageResourcesPNL.add(CSicon);
+        CSicon.setBounds(50, 170, 90, 70);
 
-        s1chapter1BTN.setText("Download");
-        s1chapter1BTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                s1chapter1BTNActionPerformed(evt);
-            }
-        });
-        ManageResourcesPNL.add(s1chapter1BTN);
-        s1chapter1BTN.setBounds(100, 60, 90, 23);
+        Chemistryicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-chemistry-book-64.png"))); // NOI18N
+        ManageResourcesPNL.add(Chemistryicon);
+        Chemistryicon.setBounds(580, 160, 70, 80);
 
-        s1chapter2LBL.setText("Chapter 2");
-        ManageResourcesPNL.add(s1chapter2LBL);
-        s1chapter2LBL.setBounds(220, 60, 70, 20);
+        mathicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-maths-book-100.png"))); // NOI18N
+        ManageResourcesPNL.add(mathicon);
+        mathicon.setBounds(290, 150, 110, 100);
 
-        s1chapter2BTN.setText("Download");
-        ManageResourcesPNL.add(s1chapter2BTN);
-        s1chapter2BTN.setBounds(300, 60, 90, 23);
+        introLBL.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        introLBL.setForeground(new java.awt.Color(255, 255, 255));
+        introLBL.setText("Side Subjects ");
+        ManageResourcesPNL.add(introLBL);
+        introLBL.setBounds(200, 10, 250, 50);
 
-        s1chapter3LBL.setText("Chapter 3");
-        ManageResourcesPNL.add(s1chapter3LBL);
-        s1chapter3LBL.setBounds(450, 60, 70, 20);
-
-        s1chapter3BTN.setText("Download");
-        ManageResourcesPNL.add(s1chapter3BTN);
-        s1chapter3BTN.setBounds(540, 60, 90, 23);
-
-        s2chapter1LBL.setText("Chapter 1");
-        ManageResourcesPNL.add(s2chapter1LBL);
-        s2chapter1LBL.setBounds(20, 170, 70, 20);
-
-        jButton4.setText("Download");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        ManageResourcesPNL.add(jButton4);
-        jButton4.setBounds(100, 170, 90, 23);
-
-        s2chapter2LBL.setText("Chapter 2");
-        ManageResourcesPNL.add(s2chapter2LBL);
-        s2chapter2LBL.setBounds(220, 170, 70, 20);
-
-        jButton5.setText("Download");
-        ManageResourcesPNL.add(jButton5);
-        jButton5.setBounds(300, 170, 90, 23);
-
-        s2chapter3LBL.setText("Chapter 3");
-        ManageResourcesPNL.add(s2chapter3LBL);
-        s2chapter3LBL.setBounds(450, 170, 70, 20);
-
-        jButton6.setText("Download");
-        ManageResourcesPNL.add(jButton6);
-        jButton6.setBounds(540, 170, 90, 23);
-
-        s3chapter1LBL.setText("Chapter 1");
-        ManageResourcesPNL.add(s3chapter1LBL);
-        s3chapter1LBL.setBounds(20, 290, 70, 20);
-
-        jButton7.setText("Download");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-        ManageResourcesPNL.add(jButton7);
-        jButton7.setBounds(100, 290, 90, 23);
-
-        s3chapter2LBL.setText("Chapter 2");
-        ManageResourcesPNL.add(s3chapter2LBL);
-        s3chapter2LBL.setBounds(220, 290, 70, 20);
-
-        jButton8.setText("Download");
-        ManageResourcesPNL.add(jButton8);
-        jButton8.setBounds(300, 290, 90, 23);
-
-        s3chapter3LBL.setText("Chapter 3");
-        ManageResourcesPNL.add(s3chapter3LBL);
-        s3chapter3LBL.setBounds(450, 290, 70, 20);
-
-        jButton9.setText("Download");
-        ManageResourcesPNL.add(jButton9);
-        jButton9.setBounds(540, 290, 90, 23);
+        intro2LBL.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        intro2LBL.setForeground(new java.awt.Color(255, 255, 255));
+        intro2LBL.setText("Choose Your Side Subject By Clicking on the Icon");
+        ManageResourcesPNL.add(intro2LBL);
+        intro2LBL.setBounds(130, 60, 400, 30);
 
         SecondParent.add(ManageResourcesPNL, "card4");
 
@@ -1053,18 +977,6 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         SecondParent.revalidate();//revalidaiting the parent panel to make sure the layout is properly updated
     }//GEN-LAST:event_ManageRecourceLabelMouseClicked
 
-    private void s1chapter1BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_s1chapter1BTNActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_s1chapter1BTNActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -1109,6 +1021,8 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AVGGradeField;
+    private javax.swing.JLabel CSicon;
+    private javax.swing.JLabel Chemistryicon;
     public static javax.swing.JTextField ContactUsEmailField;
     private javax.swing.JLabel ContactUsEmailLabel;
     private javax.swing.JLabel ContactUsFeedbackLabel;
@@ -1158,7 +1072,6 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
     private javax.swing.JLabel TutorialNameLabel3;
     private javax.swing.JLabel TutorialNameLabel4;
     private javax.swing.JLabel TutorialNameLabel5;
-    private javax.swing.JLabel TutorialsLabel;
     private javax.swing.JPanel TutorialsPNL;
     private javax.swing.JButton ViewBTN;
     private javax.swing.JLabel chaperLabel;
@@ -1166,25 +1079,11 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
     private javax.swing.JButton exitBTn5;
     private javax.swing.JButton exitBTn6;
     private javax.swing.JButton exitBTn8;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JLabel intro2LBL;
+    private javax.swing.JLabel introLBL;
+    private javax.swing.JLabel mathicon;
     private javax.swing.JTable notesTBL;
-    private javax.swing.JButton s1chapter1BTN;
-    private javax.swing.JLabel s1chapter1LBL;
-    private javax.swing.JButton s1chapter2BTN;
-    private javax.swing.JLabel s1chapter2LBL;
-    private javax.swing.JButton s1chapter3BTN;
-    private javax.swing.JLabel s1chapter3LBL;
-    private javax.swing.JLabel s2chapter1LBL;
-    private javax.swing.JLabel s2chapter2LBL;
-    private javax.swing.JLabel s2chapter3LBL;
-    private javax.swing.JLabel s3chapter1LBL;
-    private javax.swing.JLabel s3chapter2LBL;
-    private javax.swing.JLabel s3chapter3LBL;
+    private javax.swing.JLabel sideSubjectsLabel;
     private javax.swing.JLabel subject1LBL;
     private javax.swing.JLabel subject2LBL;
     private javax.swing.JLabel subject3LBL;
