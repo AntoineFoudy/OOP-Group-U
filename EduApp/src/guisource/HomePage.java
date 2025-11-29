@@ -243,7 +243,7 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_SideSubjectLBLMouseClicked
 
     private void coreSubjectLBLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coreSubjectLBLMouseClicked
-         setVisible(false);//remove the current screen
+        setVisible(false);//remove the current screen
         CoreSubjectHome cs = new CoreSubjectHome();//Link Sidesubjerct to the home page
         cs.setVisible(true);//set its visibility to true setVisible(false);//remove the current screen
       
@@ -251,9 +251,9 @@ public class HomePage extends javax.swing.JFrame {
 
     private void quizLBLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quizLBLMouseClicked
         // TODO add your handling code here:
-        setVisible(false);//remove the current screen
-        SubjectsGUI subjectsGUI = new SubjectsGUI();//Link Sidesubjerct to the home page
-        subjectsGUI.setVisible(true);//set its visibility to true setVisible(false);//remove the current screen
+        setVisible(false);
+        QuizGUI quizGUI = new QuizGUI();
+        quizGUI.setVisible(true);
     }//GEN-LAST:event_quizLBLMouseClicked
 
     private void flashCardsLBLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flashCardsLBLMouseClicked
