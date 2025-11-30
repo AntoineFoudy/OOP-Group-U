@@ -4,12 +4,16 @@
  */
 package guisource;
 
+import SideSubject.SideSubjectNotes;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author shoai
+ * @author shoaib
  */
 public class SideNotes extends javax.swing.JFrame {
-
+ private SideSubjectNotes ssn = new SideSubjectNotes();
     /**
      * Creates new form SideNotes
      */
@@ -51,6 +55,7 @@ public class SideNotes extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 
+        addBTN.setBackground(new java.awt.Color(51, 102, 255));
         addBTN.setText("ADD");
         addBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,13 +63,37 @@ public class SideNotes extends javax.swing.JFrame {
             }
         });
 
+        deleteBTN.setBackground(new java.awt.Color(204, 0, 51));
         deleteBTN.setText("DELETE");
+        deleteBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBTNActionPerformed(evt);
+            }
+        });
 
+        searchBTN.setBackground(new java.awt.Color(204, 204, 204));
         searchBTN.setText("SEARCH");
+        searchBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBTNActionPerformed(evt);
+            }
+        });
 
+        viewBTN.setBackground(new java.awt.Color(204, 204, 255));
         viewBTN.setText("VIEW ");
+        viewBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewBTNActionPerformed(evt);
+            }
+        });
 
+        backBTN.setBackground(new java.awt.Color(255, 0, 51));
         backBTN.setText("BACK");
+        backBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -173,8 +202,82 @@ public class SideNotes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
+    String title = NotetitleTF.getText();
+        String content = NotecontentTF.getText();
 
+        if (title.isEmpty() || content.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Title or content cannot be empty!");
+            return;
+        }
+
+        ssn.addNote(title, content);
+        JOptionPane.showMessageDialog(this, "Note added successfully!");
     }//GEN-LAST:event_addBTNActionPerformed
+
+    private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
+       String title = NotetitleTF.getText();
+
+        if (title.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Enter a title to delete!");
+            return;
+        }
+
+        boolean deleted = ssn.deleteNote(title);
+        if (deleted) {
+            JOptionPane.showMessageDialog(this, "Note deleted successfully!");
+            AllnotesTA.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Note not found or could not delete!");
+        }
+  
+    }//GEN-LAST:event_deleteBTNActionPerformed
+
+    private void searchBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBTNActionPerformed
+     String title = NotetitleTF.getText();
+
+if (title.isEmpty()) {
+    JOptionPane.showMessageDialog(this, "Enter a title to search!");
+    return;
+}
+
+// Search for the note
+SideSubjectNotes.Note note = ssn.searchNote(title);
+
+if (note == null) {
+    JOptionPane.showMessageDialog(this, "Note not found!");
+    AllnotesTA.setText("");
+} else {
+    // Display the note in the text area
+    AllnotesTA.setText("Title: " + note.getTitle() + "\n");
+    AllnotesTA.append("Content: " + note.getContent());
+}
+
+    }//GEN-LAST:event_searchBTNActionPerformed
+
+    private void viewBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBTNActionPerformed
+   SideSubjectNotes ssn = new SideSubjectNotes();
+
+    AllnotesTA.setText("");
+
+    ArrayList<SideSubjectNotes.Note> allNotes = ssn.getAllNotes();
+
+    for (SideSubjectNotes.Note note : allNotes) {
+         AllnotesTA.append("Title: " + note.title + "\n");
+         AllnotesTA.append("Content: " + note.content + "\n");
+         AllnotesTA.append("-----------------------------\n");
+    }
+
+    if (allNotes.isEmpty()) {
+         AllnotesTA.setText("No notes available.");
+    }
+    }//GEN-LAST:event_viewBTNActionPerformed
+
+    private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
+        // TODO add your handling code here:
+         setVisible(false);//remove the current screen
+        SideSubject ss = new SideSubject();//Link Sidesubjerct to the home page
+        ss.setVisible(true);//set its visibility to true
+    }//GEN-LAST:event_backBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,11 +315,11 @@ public class SideNotes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea AllnotesTA;
+    public javax.swing.JTextArea AllnotesTA;
     private javax.swing.JLabel NotecontentLBL;
-    private javax.swing.JTextField NotecontentTF;
+    public javax.swing.JTextField NotecontentTF;
     private javax.swing.JLabel NotetitleLBL;
-    private javax.swing.JTextField NotetitleTF;
+    public javax.swing.JTextField NotetitleTF;
     private javax.swing.JButton addBTN;
     private javax.swing.JButton backBTN;
     private javax.swing.JButton deleteBTN;

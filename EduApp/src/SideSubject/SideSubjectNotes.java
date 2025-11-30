@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package SideSubject;
 
 import java.io.*;
@@ -19,12 +15,21 @@ public class SideSubjectNotes {
 
     // Note object to hold title and content
     public static class Note {
-        String title;
-        String content;
+        public String title;
+        public String content;
 
         public Note(String title, String content) {
             this.title = title;
             this.content = content;
+        }
+
+        // Getters for title and content
+        public String getTitle() {
+            return title;
+        }
+
+        public String getContent() {
+            return content;
         }
     }
 
