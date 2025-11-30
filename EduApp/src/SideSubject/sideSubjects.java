@@ -3,6 +3,7 @@ package SideSubject;
 import java.io.*;
 
 /**
+ * @author Shoaib
  * Backend class to read/write subject text files and return chapter content
  * Automatically creates a file if it does not exist
  */
@@ -66,4 +67,5 @@ public class sideSubjects {
             System.out.println("Error writing chapter file!");
         }
     }
+    
 }

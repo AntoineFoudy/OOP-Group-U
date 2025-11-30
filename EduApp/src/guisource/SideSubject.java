@@ -8,6 +8,7 @@ package guisource;
  *
  * @author Mohammad Shoaib
  */
+import SideSubject.ResourceHub;
 import guisource.HomePage;
 import java.awt.Color;//adding for color changing based on selected item in combo box for quiz, green = right, red - wrong
 import java.awt.event.KeyEvent;
@@ -35,8 +36,8 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
     private void initComponents() {
 
         HomePagePanel = new javax.swing.JPanel();
-        ReportGeneratorLogoLabel = new javax.swing.JLabel();
-        ReportGeneratorLabel = new javax.swing.JLabel();
+        NotesLogoLBL = new javax.swing.JLabel();
+        NotesTitleLBL = new javax.swing.JLabel();
         RecourceHubLogoLabel = new javax.swing.JLabel();
         RecourceHubLabel = new javax.swing.JLabel();
         ContactUsLogoLabel = new javax.swing.JLabel();
@@ -96,23 +97,23 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         HomePagePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)));
         HomePagePanel.setLayout(null);
 
-        ReportGeneratorLogoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ReportGeneratorLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/document.png"))); // NOI18N
-        ReportGeneratorLogoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ReportGeneratorLogoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+        NotesLogoLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        NotesLogoLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/document.png"))); // NOI18N
+        NotesLogoLBL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        NotesLogoLBL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ReportGeneratorLogoLabelMouseClicked(evt);
+                NotesLogoLBLMouseClicked(evt);
             }
         });
-        HomePagePanel.add(ReportGeneratorLogoLabel);
-        ReportGeneratorLogoLabel.setBounds(30, 30, 70, 70);
+        HomePagePanel.add(NotesLogoLBL);
+        NotesLogoLBL.setBounds(30, 30, 70, 70);
 
-        ReportGeneratorLabel.setFont(new java.awt.Font("Bauhaus 93", 1, 12)); // NOI18N
-        ReportGeneratorLabel.setForeground(new java.awt.Color(255, 255, 255));
-        ReportGeneratorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ReportGeneratorLabel.setText("Notes");
-        HomePagePanel.add(ReportGeneratorLabel);
-        ReportGeneratorLabel.setBounds(10, 100, 100, 24);
+        NotesTitleLBL.setFont(new java.awt.Font("Bauhaus 93", 1, 12)); // NOI18N
+        NotesTitleLBL.setForeground(new java.awt.Color(255, 255, 255));
+        NotesTitleLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        NotesTitleLBL.setText("Notes");
+        HomePagePanel.add(NotesTitleLBL);
+        NotesTitleLBL.setBounds(10, 100, 100, 24);
 
         RecourceHubLogoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         RecourceHubLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/book.png"))); // NOI18N
@@ -678,7 +679,22 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
     }// </editor-fold>//GEN-END:initComponents
 
     private void ContactUsFirstNameFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ContactUsFirstNameFieldKeyPressed
-       
+   String Text = ContactUsFirstNameField.getText();//get text as a string from the Field element within the GUI
+        int InpLength = 30;//setting the length limit of the field
+
+        int code = evt.getKeyCode();//getting code for key pressed
+
+        if ((code >= KeyEvent.VK_A && code <= KeyEvent.VK_Z)//if condition to ensure the end user is only able to enter the expected input and cant break the program
+                || code == KeyEvent.VK_BACK_SPACE) {//allow the end user to hit backspace
+
+            if (Text.length() >= InpLength && code != KeyEvent.VK_BACK_SPACE) {//allow backspace if the limit is reached
+                JOptionPane.showMessageDialog(null, "Most allowed is 30 inputs for first name!");//notify the end user if it was succesful or not using j option pane popup
+                evt.consume();//stops the key press from happenign
+            }//end if
+        } else {//start else if condition
+            JOptionPane.showMessageDialog(null, "Wrong input. Please use valid name inputs.");//notify the end user if it was succesful or not using j option pane popup
+            evt.consume();//stops the key press from happenign
+        }//end if       
     }//GEN-LAST:event_ContactUsFirstNameFieldKeyPressed
 
     private void FeedbackTextAreaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FeedbackTextAreaKeyPressed
@@ -718,16 +734,31 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
     }//GEN-LAST:event_ContactUsEmailFieldKeyPressed
 
     private void SendFeedbackBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendFeedbackBTNActionPerformed
-    
+    String firstname = ContactUsFirstNameField.getText();//getting the first name from the field in the gui and assinging it to a string
+        String surname = ContactUsSurnameField.getText();//getting the surname from the field in the gui and assinging it to a string
+        String gmail = ContactUsEmailField.getText();//getting the gmail from the field in the gui and assinging it to a string
+        String dateReview = ContactUsReviewDateFormattedField.getText();//getting the date from the field in the gui and assinging it to a string
+        String content = FeedbackTextArea.getText();//getting the feedback from the field in the gui and assinging it to a string
+
+        if (ContactUsFirstNameField.getText().isEmpty() || ContactUsEmailField.getText().isEmpty() || dateReview.isEmpty() || FeedbackTextArea.getText().isEmpty() || ContactUsFirstNameField.getText().isEmpty() || !ContactUsTermsAndConditionsCheckBox.isSelected()) {//if statement to ensure the fields are filled out to ensure the program does not crash
+            JOptionPane.showMessageDialog(null, "Cannot leave any fields empty, please fill all!", "please ensure you accept the terms and condtions", JOptionPane.ERROR_MESSAGE);//joption pane popup to notify the end user the fields need to be filled out
+            return;
+        }//end if condition
+
+        ResourceHub rh = new ResourceHub();//create an instance of the resource hub class
+        rh.SaveEndUserFeedback(firstname, surname, gmail, dateReview, content);//call upon the contact us method in the contactUsPNL and pass in the entered variable as args
+
+        JOptionPane.showMessageDialog(null, "Your valuable feedback has been sent.", "Success", JOptionPane.INFORMATION_MESSAGE);//JOptionPane to notify the end user that the feedback was succesfully sent
+
     }//GEN-LAST:event_SendFeedbackBTNActionPerformed
 
     private void ContactUsFirstNameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContactUsFirstNameFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ContactUsFirstNameFieldActionPerformed
 
-    private void ReportGeneratorLogoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportGeneratorLogoLabelMouseClicked
+    private void NotesLogoLBLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NotesLogoLBLMouseClicked
     
-    }//GEN-LAST:event_ReportGeneratorLogoLabelMouseClicked
+    }//GEN-LAST:event_NotesLogoLBLMouseClicked
 
     private void RecourceHubLogoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecourceHubLogoLabelMouseClicked
         Parent.removeAll();//using the card layout to switch  beetween panels, so i remove all at the beginning to avoid overlapping
@@ -763,23 +794,23 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
     }//GEN-LAST:event_exitBTn5ActionPerformed
 
     private void Tutorial1LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tutorial1LabelMouseClicked
-     
+      ResourceHub.ConnectingTutorial1();//call upon the method in the resource hub class to link the tutorials succesfully
     }//GEN-LAST:event_Tutorial1LabelMouseClicked
 
     private void TutorialLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TutorialLabel2MouseClicked
-   
+       ResourceHub.ConnectingTutorial2();//call upon the method in the resource hub class to link the tutorials succesfully
     }//GEN-LAST:event_TutorialLabel2MouseClicked
 
     private void TutorialLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TutorialLabel3MouseClicked
-
+ ResourceHub.ConnectingTutorial3();//call upon the method in the resource hub class to link the tutorials succesfully
     }//GEN-LAST:event_TutorialLabel3MouseClicked
 
     private void TutorialLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TutorialLabel4MouseClicked
-
+ ResourceHub.ConnectingTutorial4();//call upon the method in the resource hub class to link the tutorials succesfully
     }//GEN-LAST:event_TutorialLabel4MouseClicked
 
     private void TutorialLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TutorialLabel5MouseClicked
-  
+   ResourceHub.ConnectingTutorial5();//call upon the method in the resource hub class to link the tutorials succesfully
     }//GEN-LAST:event_TutorialLabel5MouseClicked
 
     private void exitBTn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBTn8ActionPerformed
@@ -879,11 +910,11 @@ setVisible(false);
     private javax.swing.JLabel ManageRecourceLabel;
     private javax.swing.JLabel ManageResourcesLabel;
     private javax.swing.JPanel ManageResourcesPNL;
+    private javax.swing.JLabel NotesLogoLBL;
+    private javax.swing.JLabel NotesTitleLBL;
     private javax.swing.JPanel Parent;
     private javax.swing.JLabel RecourceHubLabel;
     private javax.swing.JLabel RecourceHubLogoLabel;
-    private javax.swing.JLabel ReportGeneratorLabel;
-    private javax.swing.JLabel ReportGeneratorLogoLabel;
     private javax.swing.JPanel ResourceHubNavPNL;
     private javax.swing.JPanel ResourceHubPNL;
     private javax.swing.JPanel SecondParent;

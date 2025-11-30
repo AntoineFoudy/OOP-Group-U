@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 /**
+ * @author Shoaib
  * Backend class for Chemistry subject
  * Reads chapter content from .txt files and returns as String
  */

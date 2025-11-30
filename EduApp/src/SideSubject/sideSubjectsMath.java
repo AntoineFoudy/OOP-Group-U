@@ -1,5 +1,10 @@
 package SideSubject;
 
+/**
+ * @author Shoaib
+ * Backend class to read/write subject text files and return chapter content
+ * Automatically creates a file if it does not exist
+ */
 import java.io.*;
 
 public class sideSubjectsMath {
