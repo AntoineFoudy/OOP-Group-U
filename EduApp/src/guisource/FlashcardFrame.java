@@ -4,6 +4,7 @@
  */
 package guisource;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
@@ -17,7 +18,9 @@ public class FlashcardFrame extends javax.swing.JFrame {
     private int flashcard_index = 0;
     private int flashcard_index_max;
     private int q_a_switch = 0;
-    
+    private ArrayList<String> set_question = new ArrayList<String>();
+    private ArrayList<String> set_answer = new ArrayList<String>();
+    private String flashcard_set_save;    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FlashcardFrame.class.getName());
 
     /**
@@ -182,8 +185,18 @@ public class FlashcardFrame extends javax.swing.JFrame {
         });
 
         previous_btn.setText("Previous");
+        previous_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                previous_btnActionPerformed(evt);
+            }
+        });
 
         next_btn.setText("Next");
+        next_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                next_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -214,6 +227,11 @@ public class FlashcardFrame extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(102, 102, 102));
 
         create_flashcard_btn.setText("Create Flashcard Set");
+        create_flashcard_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                create_flashcard_btnActionPerformed(evt);
+            }
+        });
 
         delete_flashcard_btn.setText("Delete Flashcard Set");
 
@@ -257,8 +275,18 @@ public class FlashcardFrame extends javax.swing.JFrame {
         jLabel4.setText("Enter your Answer");
 
         add_another_btn.setText("Add Another");
+        add_another_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_another_btnActionPerformed(evt);
+            }
+        });
 
         select_save_box.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Set 1", "Set 2", "Set 3", "Set 4", "Set 5", "Set 6" }));
+        select_save_box.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                select_save_boxActionPerformed(evt);
+            }
+        });
 
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Save as");
@@ -336,6 +364,11 @@ public class FlashcardFrame extends javax.swing.JFrame {
         del_set_6.setText("Set 6");
 
         del_flashcard_btn.setText("Delete all Selected");
+        del_flashcard_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                del_flashcard_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -439,7 +472,8 @@ public class FlashcardFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+// Move From Pannel to Pannel and Frame to Frame
     private void home_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_btnActionPerformed
         jpanel_flashcard.setSelectedIndex(0);
     }//GEN-LAST:event_home_btnActionPerformed
@@ -458,15 +492,20 @@ public class FlashcardFrame extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_main_menu_btnActionPerformed
 
+// When a set it selected to be viewed
     private void select_view_boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_view_boxActionPerformed
-        // TODO add your handling code here:
         var flashcard_set_view = (String) select_view_box.getSelectedItem();
-        //flashcardlogic.ViewFlashcard fcvfc = new flashcardlogic.ViewFlashcard(flashcard_set_view);
+
         jpanel_flashcard.setSelectedIndex(1);
-        flashcardView(flashcard_set_view);
+        try {
+            flashcardView(flashcard_set_view);
+        } catch (FileNotFoundException ex) {
+            System.getLogger(FlashcardFrame.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
         
     }//GEN-LAST:event_select_view_boxActionPerformed
 
+// Method for Displaying Question or Answer in View A Flashcard Function
     private void display_text_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_display_text_btnActionPerformed
         // TODO add your handling code here:
         
@@ -480,32 +519,87 @@ public class FlashcardFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_display_text_btnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+// Displaying the next Indexed Flashcard in a Set, Error Handaling for if Index does not exsit
+    private void next_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_next_btnActionPerformed
+        // TODO add your handling code here:
+        if(flashcard_index != flashcard_index_max) {
+            this.flashcard_index = flashcard_index + 1;
+            display_text_btn.setText(this.view_answer.get(this.flashcard_index));
+            display_text_btn.setText(this.view_question.get(this.flashcard_index));
         }
-        //</editor-fold>
+    }//GEN-LAST:event_next_btnActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FlashcardFrame().setVisible(true));
+// Displaying the previous Indexed Flashcard in a Set, Error Handaling for if Index does not exsit
+    private void previous_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previous_btnActionPerformed
+        // TODO add your handling code here:
+        if(flashcard_index != 0) {
+            this.flashcard_index = flashcard_index - 1;
+            display_text_btn.setText(this.view_answer.get(this.flashcard_index));
+            display_text_btn.setText(this.view_question.get(this.flashcard_index));
+        }
+    }//GEN-LAST:event_previous_btnActionPerformed
+
+// When Set is selected pass the sellected set to the Method for saving the new set to the JSON file
+    private void select_save_boxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_save_boxActionPerformed
+        jpanel_flashcard.setSelectedIndex(0);
+        this.flashcard_set_save = (String) select_save_box.getSelectedItem();
+        try {
+            flashcard_set();
+        } catch (FileNotFoundException ex) {
+            System.getLogger(FlashcardFrame.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+    }//GEN-LAST:event_select_save_boxActionPerformed
+
+// When the button is pressed Saves the Text in the Text Area to the ArrayLists and Make the Text Area empty
+    private void add_another_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_another_btnActionPerformed
+   
+        this.set_question.add(flashcard_question_text.getText());
+        this.set_answer.add(flashcard_answer_text.getText());
+        flashcard_question_text.setText(null);
+        flashcard_answer_text.setText(null);       
+    }//GEN-LAST:event_add_another_btnActionPerformed
+
+    private void create_flashcard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_flashcard_btnActionPerformed
+        jpanel_flashcard.setSelectedIndex(3);
+    }//GEN-LAST:event_create_flashcard_btnActionPerformed
+
+// When the button it pressed it checks which boxes are check and then passes it on to the Delete Function
+    private void del_flashcard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_del_flashcard_btnActionPerformed
+        ArrayList<String> delete_set = new ArrayList<String>();
+        if (del_set_1.isSelected()) {
+            delete_set.add("Set 1");
+        }
+        if (del_set_2.isSelected()) {
+            delete_set.add("Set 2");
+        }
+        if (del_set_3.isSelected()) {
+            delete_set.add("Set 3");
+        }
+        if (del_set_4.isSelected()) {
+            delete_set.add("Set 4");
+        }
+        if (del_set_5.isSelected()) {
+            delete_set.add("Set 5");
+        }
+        if (del_set_6.isSelected()) {
+            delete_set.add("Set 6");
+        }
+        
+        try {
+            delete_these_set(delete_set);
+        } catch (FileNotFoundException ex) {
+            System.getLogger(FlashcardFrame.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+        
+        jpanel_flashcard.setSelectedIndex(0);       
+        
+    }//GEN-LAST:event_del_flashcard_btnActionPerformed
+
+    public void delete_these_set(ArrayList<String> delete_set) throws FileNotFoundException {
+        flashcardlogic.DeleteFlashcard fcdfc = new flashcardlogic.DeleteFlashcard(delete_set);
     }
-    
-    public void flashcardView(String flashcard_set_view) {
+// Method for instantiation the ViewFlashcard Class, Adds data on the size of the ArrayList, Displays the first flashcard with index 0
+    public void flashcardView(String flashcard_set_view) throws FileNotFoundException {
         
         flashcardlogic.ViewFlashcard fcvfc = new flashcardlogic.ViewFlashcard(flashcard_set_view);
         
@@ -513,11 +607,15 @@ public class FlashcardFrame extends javax.swing.JFrame {
         this.view_answer = new ArrayList<String>(fcvfc.get_flashcard_answer());
         
         this.flashcard_index_max = view_question.size();
-//        System.out.println(flashcard_index);
         
-        display_text_btn.setText(view_question.get(flashcard_index));
+        display_text_btn.setText(view_question.get(flashcard_index)); 
+    }
+    
+    public void flashcard_set() throws FileNotFoundException {
+        flashcardlogic.CreateFlashcard fccf = new flashcardlogic.CreateFlashcard(set_question, set_answer, flashcard_set_save);
         
-        
+        set_question.clear();
+        set_answer.clear();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

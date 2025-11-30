@@ -242,11 +242,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Previous"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="previous_btnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="next_btn">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Next"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="next_btnActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -294,6 +300,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Create Flashcard Set"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="create_flashcard_btnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="delete_flashcard_btn">
               <Properties>
@@ -425,6 +434,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add Another"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="add_another_btnActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="select_save_box">
               <Properties>
@@ -439,6 +451,9 @@
                   </StringArray>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="select_save_boxActionPerformed"/>
+              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -588,6 +603,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Delete all Selected"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="del_flashcard_btnActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

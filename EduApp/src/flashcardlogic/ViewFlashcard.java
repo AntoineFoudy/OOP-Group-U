@@ -20,18 +20,15 @@ public class ViewFlashcard {
     private ArrayList<String> flashcard_question;
     private ArrayList<String> flashcard_answer;
     
-    public ViewFlashcard(String flashcard_set_view) {
+    public ViewFlashcard(String flashcard_set_view) throws FileNotFoundException {
         this.flashcard_set_view = flashcard_set_view;
         System.out.println(flashcard_set_view);
         
-        // HashMap will be how I store the question and answers from the json file
-        // Question == Key, Answer == Value
-        //HashMap<String, String> flashcard_list = new HashMap<String, String>();
         this.flashcard_question = new ArrayList<String>();
         this.flashcard_answer = new ArrayList<String>();
         
         
-        InputStream read_json = getClass().getResourceAsStream("flashcard.JSON");
+        InputStream  read_json = new FileInputStream("Flashcard Resource/flashcard.JSON");
         
         try {
             JsonReader reader = new JsonReader(new InputStreamReader(read_json, "UTF-8"));
@@ -46,14 +43,11 @@ public class ViewFlashcard {
            
            
            for(Map.Entry<String, JsonElement> current : set_here.entrySet()) {
-            //JsonObject current = set_here(i).getAsJsonObject();
             
                String question = current.getKey();
                String answer = current.getValue().getAsString();
-//               System.out.println(question);
-//               System.out.println(answer);
-                flashcard_question.add(question);
-                flashcard_answer.add(answer);
+               flashcard_question.add(question);
+               flashcard_answer.add(answer);
             }
         }
         catch (IOException e){
