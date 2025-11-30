@@ -12,7 +12,6 @@ A Java-based prototype supporting **UN Goal 4: Quality Education** — a lightwe
 ## 📂 How it works
 - Initial chapters preinstalled  
 - Additional content downloadable (simulated via JSON)  
-- Side subjects keep only 2 sections at once; downloading a 3rd removes the oldest  
 - Quizzes auto-end when time expires
 
 ## 🛠 Tech
