@@ -1,0 +1,30 @@
+# Chapter 2: Fundamentals of Programming
+
+## Basics of Programming
+Programming allows us to translate logical flows into instructions for a computer. 
+Key concepts include: variables, data types (integer, float, string, boolean), operators, expressions, and input/output.
+
+## Control Flow
+- **Conditionals**: if, else, switch
+- **Loops**: for, while, do-while
+- Control flow ensures programs respond correctly to different inputs.
+
+## Functions and Modularity
+- Functions group related statements under a name.
+- Parameters and return values enable reusability and abstraction.
+- Improves readability and modular design.
+
+## Error Handling and Debugging
+- Errors: syntax, runtime, logic.
+- Use debugging, testing, and exception handling to ensure reliability.
+
+## Intro to Data Structures
+- Arrays, Lists, Stacks, Queues.
+- Organize data efficiently to improve program performance.
+
+## Best Practices
+- Meaningful variable names, comments, and proper formatting.
+- Avoid code duplication; write modular, readable code.
+
+## Summary
+Programming fundamentals form the foundation for software development and advanced CS topics.

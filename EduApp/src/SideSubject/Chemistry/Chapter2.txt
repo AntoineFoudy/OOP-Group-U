@@ -1,0 +1,27 @@
+## Atomic Structure
+- Matter is made up of atoms, consisting of protons, neutrons, and electrons.
+- Atomic number = number of protons; Mass number = protons + neutrons.
+- Electrons occupy energy levels (shells) around the nucleus.
+
+## Chemical Bonds
+- Ionic Bonds: Transfer of electrons between atoms (metal + non-metal).
+- Covalent Bonds: Sharing of electrons between atoms (non-metal + non-metal).
+- Metallic Bonds: Delocalized electrons in metals.
+- Hydrogen Bonds: Weak interaction, important in water and biological molecules.
+
+## Chemical Reactions
+- Reactants transform into products.
+- Law of Conservation of Mass: Mass is neither created nor destroyed.
+- Reaction types: combination, decomposition, displacement, redox.
+
+## Periodic Table
+- Elements arranged by increasing atomic number.
+- Groups: Columns with similar chemical properties.
+- Periods: Rows representing energy levels.
+
+## States of Matter
+- Solids, liquids, gases, and plasma.
+- Phase changes: melting, freezing, condensation, vaporization, sublimation.
+
+## Summary
+A strong grasp of atomic theory, bonding, reactions, and the periodic table forms the foundation of chemistry.

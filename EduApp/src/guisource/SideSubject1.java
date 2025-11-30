@@ -178,31 +178,24 @@ public class SideSubject1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CS1BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS1BTNActionPerformed
-     CS1BTN.addActionListener(e -> {
-    String content = sideSubjects.getChapterContent("ComputerScience", "Chapter1");
+        String content = sideSubjects.getChapterContent(1);
     CS1TF2.setText(content);
-});
     }//GEN-LAST:event_CS1BTNActionPerformed
 
     private void CS2BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2BTNActionPerformed
-        // TODO add your handling code here:
-        CS2BTN.addActionListener(e -> {
-    String content = sideSubjects.getChapterContent("ComputerScience", "Chapter2");
+   String content = sideSubjects.getChapterContent(2);
     CS2TF.setText(content);
-});
     }//GEN-LAST:event_CS2BTNActionPerformed
 
     private void CS3BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS3BTNActionPerformed
-        // TODO add your handling code here:
-        CS3BTN.addActionListener(e -> {
-    String content = sideSubjects.getChapterContent("ComputerScience", "Chapter3");
+ String content = sideSubjects.getChapterContent(3);
     CS3TF.setText(content);
-});
     }//GEN-LAST:event_CS3BTNActionPerformed
 
     private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
-        // TODO add your handling code here:
-        backBTN.addActionListener(e -> this.dispose());
+      setVisible(false);//remove the current screen
+        SideSubject ss = new SideSubject();//Link Sidesubjerct to the home page
+        ss.setVisible(true);//set its visibility to true
     }//GEN-LAST:event_backBTNActionPerformed
 
     /**

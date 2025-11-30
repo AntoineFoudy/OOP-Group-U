@@ -71,20 +71,6 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         mathicon = new javax.swing.JLabel();
         introLBL = new javax.swing.JLabel();
         intro2LBL = new javax.swing.JLabel();
-        ReportGeneratorPNL = new javax.swing.JPanel();
-        subjectNameLabel = new javax.swing.JLabel();
-        chaperLabel = new javax.swing.JLabel();
-        NotesLabel = new javax.swing.JLabel();
-        ReportGeneratorFirstNameField = new javax.swing.JTextField();
-        AVGGradeField = new javax.swing.JTextField();
-        ReportGeneratorContentLabel = new javax.swing.JLabel();
-        SaveBTN = new javax.swing.JButton();
-        ViewBTN = new javax.swing.JButton();
-        ReportGeneratorTitleLabel = new javax.swing.JLabel();
-        exitBTn6 = new javax.swing.JButton();
-        TBLScrollPane = new javax.swing.JScrollPane();
-        notesTBL = new javax.swing.JTable();
-        NotesTA = new javax.swing.JTextField();
         ContactUsPNL = new javax.swing.JPanel();
         ContactUsTitleLabel = new javax.swing.JLabel();
         ContactUsFirstNameField = new javax.swing.JTextField();
@@ -426,14 +412,29 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         subject2LBL.setBounds(550, 240, 120, 25);
 
         CSicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-computer-science-68.png"))); // NOI18N
+        CSicon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CSiconMouseClicked(evt);
+            }
+        });
         ManageResourcesPNL.add(CSicon);
         CSicon.setBounds(50, 170, 90, 70);
 
         Chemistryicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-chemistry-book-64.png"))); // NOI18N
+        Chemistryicon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ChemistryiconMouseClicked(evt);
+            }
+        });
         ManageResourcesPNL.add(Chemistryicon);
         Chemistryicon.setBounds(580, 160, 70, 80);
 
         mathicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons8-maths-book-100.png"))); // NOI18N
+        mathicon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mathiconMouseClicked(evt);
+            }
+        });
         ManageResourcesPNL.add(mathicon);
         mathicon.setBounds(290, 150, 110, 100);
 
@@ -455,129 +456,6 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         SecondParent.setBounds(0, 130, 690, 380);
 
         Parent.add(ResourceHubPNL, "card3");
-
-        ReportGeneratorPNL.setBackground(new java.awt.Color(51, 204, 255));
-        ReportGeneratorPNL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ReportGeneratorPNL.setLayout(null);
-
-        subjectNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        subjectNameLabel.setText("Subject Name");
-        ReportGeneratorPNL.add(subjectNameLabel);
-        subjectNameLabel.setBounds(30, 90, 100, 16);
-
-        chaperLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        chaperLabel.setText("Chaper No#");
-        ReportGeneratorPNL.add(chaperLabel);
-        chaperLabel.setBounds(390, 90, 76, 16);
-
-        NotesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        NotesLabel.setText("Notes");
-        ReportGeneratorPNL.add(NotesLabel);
-        NotesLabel.setBounds(40, 150, 62, 16);
-
-        ReportGeneratorFirstNameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ReportGeneratorFirstNameField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                ReportGeneratorFirstNameFieldKeyPressed(evt);
-            }
-        });
-        ReportGeneratorPNL.add(ReportGeneratorFirstNameField);
-        ReportGeneratorFirstNameField.setBounds(130, 90, 120, 22);
-
-        AVGGradeField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        AVGGradeField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ReportGeneratorAVGGradeFieldActionPerformed(evt);
-            }
-        });
-        AVGGradeField.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                AVGGradeFieldKeyPressed(evt);
-            }
-        });
-        ReportGeneratorPNL.add(AVGGradeField);
-        AVGGradeField.setBounds(490, 90, 120, 22);
-
-        ReportGeneratorContentLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ReportGeneratorContentLabel.setText("Notes");
-        ReportGeneratorPNL.add(ReportGeneratorContentLabel);
-        ReportGeneratorContentLabel.setBounds(310, 260, 62, 16);
-
-        SaveBTN.setText("Save");
-        SaveBTN.setToolTipText("Please fill in the fields listed above to save your report, when you hit the save button, feedback will be generated to notify you how your doing in your course based on your average grade!");
-        SaveBTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveBTNActionPerformed(evt);
-            }
-        });
-        ReportGeneratorPNL.add(SaveBTN);
-        SaveBTN.setBounds(100, 470, 130, 23);
-
-        ViewBTN.setText("view");
-        ViewBTN.setToolTipText("Please press this view button to populate the table");
-        ViewBTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ViewBTNActionPerformed(evt);
-            }
-        });
-        ReportGeneratorPNL.add(ViewBTN);
-        ViewBTN.setBounds(310, 470, 107, 23);
-
-        ReportGeneratorTitleLabel.setFont(new java.awt.Font("Bauhaus 93", 1, 36)); // NOI18N
-        ReportGeneratorTitleLabel.setForeground(new java.awt.Color(255, 255, 255));
-        ReportGeneratorTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ReportGeneratorTitleLabel.setText("Notes ");
-        ReportGeneratorPNL.add(ReportGeneratorTitleLabel);
-        ReportGeneratorTitleLabel.setBounds(181, 31, 295, 36);
-
-        exitBTn6.setBackground(new java.awt.Color(255, 51, 51));
-        exitBTn6.setText("EXIT");
-        exitBTn6.setToolTipText("Press this button to return to home");
-        exitBTn6.setMaximumSize(new java.awt.Dimension(72, 22));
-        exitBTn6.setMinimumSize(new java.awt.Dimension(72, 22));
-        exitBTn6.setPreferredSize(new java.awt.Dimension(72, 22));
-        exitBTn6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitBTn6ActionPerformed(evt);
-            }
-        });
-        ReportGeneratorPNL.add(exitBTn6);
-        exitBTn6.setBounds(500, 470, 104, 22);
-
-        notesTBL.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "SubjectName", "Chapter", "Notes"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        TBLScrollPane.setViewportView(notesTBL);
-
-        ReportGeneratorPNL.add(TBLScrollPane);
-        TBLScrollPane.setBounds(40, 290, 620, 123);
-        ReportGeneratorPNL.add(NotesTA);
-        NotesTA.setBounds(110, 150, 520, 100);
-
-        Parent.add(ReportGeneratorPNL, "card4");
 
         ContactUsPNL.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -847,16 +725,8 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         // TODO add your handling code here:
     }//GEN-LAST:event_ContactUsFirstNameFieldActionPerformed
 
-    private void ReportGeneratorAVGGradeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReportGeneratorAVGGradeFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ReportGeneratorAVGGradeFieldActionPerformed
-
     private void ReportGeneratorLogoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ReportGeneratorLogoLabelMouseClicked
-        Parent.removeAll();//using the card layout to switch  beetween panels, so i remove all at the beginning to avoid overlapping
-        Parent.add(ReportGeneratorPNL);//call upon the desired panel that the end user has clicked
-        Parent.repaint();//repainting thr parent panel to get the cuurent desired view in the CardLayout
-        Parent.revalidate();//revalidaiting the parent panel to make sure the layout is properly updated
-
+    
     }//GEN-LAST:event_ReportGeneratorLogoLabelMouseClicked
 
     private void RecourceHubLogoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecourceHubLogoLabelMouseClicked
@@ -892,12 +762,6 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         homePage.setVisible(true);//set its visibility to true
     }//GEN-LAST:event_exitBTn5ActionPerformed
 
-    private void exitBTn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBTn6ActionPerformed
-        setVisible(false);//remove the current screen
-        HomePage homePage = new HomePage();//create the of the homepage
-        homePage.setVisible(true);//set its visibility to true
-    }//GEN-LAST:event_exitBTn6ActionPerformed
-
     private void Tutorial1LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tutorial1LabelMouseClicked
      
     }//GEN-LAST:event_Tutorial1LabelMouseClicked
@@ -918,57 +782,11 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
   
     }//GEN-LAST:event_TutorialLabel5MouseClicked
 
-    private void ViewBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewBTNActionPerformed
-     
-    }//GEN-LAST:event_ViewBTNActionPerformed
-
-    private void SaveBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBTNActionPerformed
- 
-    }//GEN-LAST:event_SaveBTNActionPerformed
-
     private void exitBTn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBTn8ActionPerformed
-
-         HomePage homePage = new HomePage();//create the of the homepage
+setVisible(false);
+         HomePage homePage = new HomePage();//Back to the homePage 
         homePage.setVisible(true);//set its visibility to true
     }//GEN-LAST:event_exitBTn8ActionPerformed
-
-    private void ReportGeneratorFirstNameFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ReportGeneratorFirstNameFieldKeyPressed
-        String Text = ReportGeneratorFirstNameField.getText();//get text as a string from the Field element within the GUI
-        int InpLength = 30;//setting the length limit of the field
-
-        int code = evt.getKeyCode();//getting code for key pressed
-
-        if ((code >= KeyEvent.VK_A && code <= KeyEvent.VK_Z)//if condition to ensure the end user is only able to enter the expected input and cant break the program
-                || code == KeyEvent.VK_BACK_SPACE) {//allow the end user to hit backspace
-
-            if (Text.length() >= InpLength && code != KeyEvent.VK_BACK_SPACE) {//allow backspace if the limit is reached
-                JOptionPane.showMessageDialog(null, "Most allowed is 30 inputs for name!");//notify the end user if it was succesful or not using j option pane popup
-                evt.consume();//stops the key press from happenign
-            }//end if
-        } else {//start else if condition
-            JOptionPane.showMessageDialog(null, "Wrong input. Please use valid email inputs.");//notify the end user if it was succesful or not using j option pane popup
-            evt.consume();//stops the key press from happenign
-        }//end if
-    }//GEN-LAST:event_ReportGeneratorFirstNameFieldKeyPressed
-
-    private void AVGGradeFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AVGGradeFieldKeyPressed
-        String Text = AVGGradeField.getText();//get text as a string from the Field element within the GUI
-        int InpLength = 5;//setting the length limit of the field
-
-        int code = evt.getKeyCode();//getting code for key pressed
-
-        if ((code >= KeyEvent.VK_0 && code <= KeyEvent.VK_9)//if condition to ensure the end user is only able to enter the expected input and cant break the program
-                || code == KeyEvent.VK_BACK_SPACE) {//allow the end user to hit backspace
-
-            if (Text.length() >= InpLength && code != KeyEvent.VK_BACK_SPACE) {//allow backspace if the limit is reached
-                JOptionPane.showMessageDialog(null, "Most allowed is 5 inputs for grade!");//notify the end user if it was succesful or not using j option pane popup
-                evt.consume();//stops the key press from happenign
-            }//end if
-        } else {//start else if condition
-            JOptionPane.showMessageDialog(null, "Wrong input. Please use valid email inputs.");//notify the end user if it was succesful or not using j option pane popup
-            evt.consume();//stops the key press from happenign
-        }//end if
-    }//GEN-LAST:event_AVGGradeFieldKeyPressed
 
     private void ManageRecourceLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageRecourceLabelMouseClicked
         SecondParent.removeAll();//using the card layout to switch  beetween panels, so i remove all at the beginning to avoid overlapping
@@ -976,6 +794,24 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         SecondParent.repaint();//repainting thr parent panel to get the cuurent desired view in the CardLayout
         SecondParent.revalidate();//revalidaiting the parent panel to make sure the layout is properly updated
     }//GEN-LAST:event_ManageRecourceLabelMouseClicked
+
+    private void CSiconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CSiconMouseClicked
+       setVisible(false);
+        SideSubject1 ss1 = new SideSubject1();
+       ss1.setVisible(true);
+    }//GEN-LAST:event_CSiconMouseClicked
+
+    private void mathiconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mathiconMouseClicked
+    setVisible(false);
+        SideSubject2 ss2 = new SideSubject2();
+       ss2.setVisible(true);
+    }//GEN-LAST:event_mathiconMouseClicked
+
+    private void ChemistryiconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChemistryiconMouseClicked
+       setVisible(false);
+        SideSubject3 ss3 = new SideSubject3();
+       ss3.setVisible(true);
+    }//GEN-LAST:event_ChemistryiconMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1020,7 +856,6 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField AVGGradeField;
     private javax.swing.JLabel CSicon;
     private javax.swing.JLabel Chemistryicon;
     public static javax.swing.JTextField ContactUsEmailField;
@@ -1044,23 +879,15 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
     private javax.swing.JLabel ManageRecourceLabel;
     private javax.swing.JLabel ManageResourcesLabel;
     private javax.swing.JPanel ManageResourcesPNL;
-    private javax.swing.JLabel NotesLabel;
-    private javax.swing.JTextField NotesTA;
     private javax.swing.JPanel Parent;
     private javax.swing.JLabel RecourceHubLabel;
     private javax.swing.JLabel RecourceHubLogoLabel;
-    private javax.swing.JLabel ReportGeneratorContentLabel;
-    private javax.swing.JTextField ReportGeneratorFirstNameField;
     private javax.swing.JLabel ReportGeneratorLabel;
     private javax.swing.JLabel ReportGeneratorLogoLabel;
-    private javax.swing.JPanel ReportGeneratorPNL;
-    private javax.swing.JLabel ReportGeneratorTitleLabel;
     private javax.swing.JPanel ResourceHubNavPNL;
     private javax.swing.JPanel ResourceHubPNL;
-    private javax.swing.JButton SaveBTN;
     private javax.swing.JPanel SecondParent;
     public static javax.swing.JButton SendFeedbackBTN;
-    private javax.swing.JScrollPane TBLScrollPane;
     private javax.swing.JLabel Tutorial1Label;
     private javax.swing.JLabel TutorialLabel;
     private javax.swing.JLabel TutorialLabel2;
@@ -1073,20 +900,15 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
     private javax.swing.JLabel TutorialNameLabel4;
     private javax.swing.JLabel TutorialNameLabel5;
     private javax.swing.JPanel TutorialsPNL;
-    private javax.swing.JButton ViewBTN;
-    private javax.swing.JLabel chaperLabel;
     private javax.swing.JButton exitBTn1;
     private javax.swing.JButton exitBTn5;
-    private javax.swing.JButton exitBTn6;
     private javax.swing.JButton exitBTn8;
     private javax.swing.JLabel intro2LBL;
     private javax.swing.JLabel introLBL;
     private javax.swing.JLabel mathicon;
-    private javax.swing.JTable notesTBL;
     private javax.swing.JLabel sideSubjectsLabel;
     private javax.swing.JLabel subject1LBL;
     private javax.swing.JLabel subject2LBL;
     private javax.swing.JLabel subject3LBL;
-    private javax.swing.JLabel subjectNameLabel;
     // End of variables declaration//GEN-END:variables
 }

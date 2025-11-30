@@ -4,6 +4,8 @@
  */
 package guisource;
 
+import SideSubject.SideSubjects2;
+
 /**
  *
  * @author shoai
@@ -27,74 +29,109 @@ public class SideSubject2 extends javax.swing.JFrame {
     private void initComponents() {
 
         chemistryLBL = new javax.swing.JLabel();
-        CS1LBL = new javax.swing.JLabel();
+        chemistry1LBL = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        CS2TF = new javax.swing.JTextArea();
+        chemistry2TF = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        CS3TF = new javax.swing.JTextArea();
+        chemistry3TF = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        CS1TF2 = new javax.swing.JTextArea();
-        CS2LBL = new javax.swing.JLabel();
-        CS3LBL = new javax.swing.JLabel();
+        chemistry1TF = new javax.swing.JTextArea();
+        chemistry2LBL = new javax.swing.JLabel();
+        chemistry3LBL = new javax.swing.JLabel();
         backBTN = new javax.swing.JButton();
+        chemistry1BTN = new javax.swing.JButton();
+        chemistry2BTN = new javax.swing.JButton();
+        chemistry3BTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         chemistryLBL.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         chemistryLBL.setText("Chemistry");
 
-        CS1LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        CS1LBL.setText("Chapter 1");
+        chemistry1LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        chemistry1LBL.setText("Chapter 1");
 
-        CS2TF.setColumns(20);
-        CS2TF.setRows(5);
-        jScrollPane1.setViewportView(CS2TF);
+        chemistry2TF.setColumns(20);
+        chemistry2TF.setRows(5);
+        jScrollPane1.setViewportView(chemistry2TF);
 
-        CS3TF.setColumns(20);
-        CS3TF.setRows(5);
-        jScrollPane2.setViewportView(CS3TF);
+        chemistry3TF.setColumns(20);
+        chemistry3TF.setRows(5);
+        jScrollPane2.setViewportView(chemistry3TF);
 
-        CS1TF2.setColumns(20);
-        CS1TF2.setRows(5);
-        jScrollPane3.setViewportView(CS1TF2);
+        chemistry1TF.setColumns(20);
+        chemistry1TF.setRows(5);
+        jScrollPane3.setViewportView(chemistry1TF);
 
-        CS2LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        CS2LBL.setText("Chapter 2");
+        chemistry2LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        chemistry2LBL.setText("Chapter 2");
 
-        CS3LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        CS3LBL.setText("Chapter 3");
+        chemistry3LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        chemistry3LBL.setText("Chapter 3");
 
         backBTN.setText("BACK");
+        backBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBTNActionPerformed(evt);
+            }
+        });
+
+        chemistry1BTN.setText("Display 1");
+        chemistry1BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chemistry1BTNActionPerformed(evt);
+            }
+        });
+
+        chemistry2BTN.setText("Display 2");
+        chemistry2BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chemistry2BTNActionPerformed(evt);
+            }
+        });
+
+        chemistry3BTN.setText("Display 3");
+        chemistry3BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chemistry3BTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(CS2LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(CS3LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(backBTN)
-                        .addGap(18, 18, 18))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(CS1LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(chemistry1LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(308, 308, 308)
                         .addComponent(chemistryLBL)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chemistry1BTN)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(chemistry2LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(chemistry2BTN))
+                            .addGap(18, 18, 18)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(chemistry3LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(chemistry3BTN))
+                            .addGap(18, 18, 18)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(backBTN)
+                            .addGap(18, 18, 18)))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(118, Short.MAX_VALUE)
@@ -107,15 +144,23 @@ public class SideSubject2 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(chemistryLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CS1LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(chemistry1LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addComponent(chemistry1BTN)
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CS2LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(chemistry2LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chemistry2BTN)))
                 .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CS3LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(chemistry3LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chemistry3BTN)))
                 .addGap(26, 26, 26)
                 .addComponent(backBTN)
                 .addContainerGap())
@@ -128,6 +173,27 @@ public class SideSubject2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void chemistry1BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chemistry1BTNActionPerformed
+        String content = SideSubjects2.getChapterContent(1);
+    chemistry1TF.setText(content);
+    }//GEN-LAST:event_chemistry1BTNActionPerformed
+
+    private void chemistry2BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chemistry2BTNActionPerformed
+        String content = SideSubjects2.getChapterContent(2);
+    chemistry2TF.setText(content);
+    }//GEN-LAST:event_chemistry2BTNActionPerformed
+
+    private void chemistry3BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chemistry3BTNActionPerformed
+       String content = SideSubjects2.getChapterContent(3);
+    chemistry3TF.setText(content);
+    }//GEN-LAST:event_chemistry3BTNActionPerformed
+
+    private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
+      setVisible(false);//remove the current screen
+        SideSubject ss = new SideSubject();//Link Sidesubjerct to the home page
+        ss.setVisible(true);//set its visibility to true
+    }//GEN-LAST:event_backBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,13 +232,16 @@ public class SideSubject2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel CS1LBL;
-    private javax.swing.JTextArea CS1TF2;
-    private javax.swing.JLabel CS2LBL;
-    private javax.swing.JTextArea CS2TF;
-    private javax.swing.JLabel CS3LBL;
-    private javax.swing.JTextArea CS3TF;
     private javax.swing.JButton backBTN;
+    private javax.swing.JButton chemistry1BTN;
+    private javax.swing.JLabel chemistry1LBL;
+    private javax.swing.JTextArea chemistry1TF;
+    private javax.swing.JButton chemistry2BTN;
+    private javax.swing.JLabel chemistry2LBL;
+    private javax.swing.JTextArea chemistry2TF;
+    private javax.swing.JButton chemistry3BTN;
+    private javax.swing.JLabel chemistry3LBL;
+    private javax.swing.JTextArea chemistry3TF;
     private javax.swing.JLabel chemistryLBL;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

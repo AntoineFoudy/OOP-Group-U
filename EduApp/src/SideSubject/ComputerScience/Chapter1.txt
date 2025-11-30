@@ -1,0 +1,27 @@
+# Chapter 1: Introduction to Computer Science
+
+## What is Computer Science?
+Computer Science (CS) is the systematic study of computational systems, algorithms, data structures, and how information is processed. 
+It combines theoretical foundations with practical applications like software engineering, networking, databases, and artificial intelligence.
+
+## History of Computing
+- Early mechanical calculators and devices.
+- 19th-century concepts of general-purpose computing.
+- 20th-century electronic computers: vacuum tubes → transistors → integrated circuits.
+- Modern computing includes programming languages, operating systems, AI, and more.
+
+## Why Study Computer Science?
+- Solve real-world problems efficiently.
+- Build software, web services, and data-driven applications.
+- Understand algorithms and data structures for optimal problem-solving.
+
+## Core Concepts
+- **Algorithm**: step-by-step procedure to solve a problem.
+- **Data Structure**: organization of data for efficient access (arrays, lists, stacks, queues, trees, graphs, hash tables).
+
+## Programming Fundamentals
+- Express algorithms in a language the computer can execute.
+- Handle input/output, conditions, loops, and manage data.
+
+## Summary
+Computer Science blends theory and practice to create solutions, tools, and systems that transform data into knowledge.

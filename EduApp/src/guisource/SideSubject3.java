@@ -4,6 +4,8 @@
  */
 package guisource;
 
+import SideSubject.sideSubjectsMath;
+
 /**
  *
  * @author shoai
@@ -27,44 +29,73 @@ public class SideSubject3 extends javax.swing.JFrame {
     private void initComponents() {
 
         mathLBL = new javax.swing.JLabel();
-        CS1LBL = new javax.swing.JLabel();
+        Mathematics1LBL = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        CS2TF = new javax.swing.JTextArea();
+        Mathematics2TF = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        CS3TF = new javax.swing.JTextArea();
+        Mathematics3TF = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        CS1TF2 = new javax.swing.JTextArea();
-        CS2LBL = new javax.swing.JLabel();
-        CS3LBL = new javax.swing.JLabel();
+        Mathematics1TF = new javax.swing.JTextArea();
+        Mathematics2LBL = new javax.swing.JLabel();
+        Mathematics3LBL = new javax.swing.JLabel();
         backBTN = new javax.swing.JButton();
+        Mathematics1BTN = new javax.swing.JButton();
+        Mathematics2BTN = new javax.swing.JButton();
+        Mathematics3BTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         mathLBL.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         mathLBL.setText("Mathematics");
 
-        CS1LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        CS1LBL.setText("Chapter 1");
+        Mathematics1LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Mathematics1LBL.setText("Chapter 1");
 
-        CS2TF.setColumns(20);
-        CS2TF.setRows(5);
-        jScrollPane1.setViewportView(CS2TF);
+        Mathematics2TF.setColumns(20);
+        Mathematics2TF.setRows(5);
+        jScrollPane1.setViewportView(Mathematics2TF);
 
-        CS3TF.setColumns(20);
-        CS3TF.setRows(5);
-        jScrollPane2.setViewportView(CS3TF);
+        Mathematics3TF.setColumns(20);
+        Mathematics3TF.setRows(5);
+        jScrollPane2.setViewportView(Mathematics3TF);
 
-        CS1TF2.setColumns(20);
-        CS1TF2.setRows(5);
-        jScrollPane3.setViewportView(CS1TF2);
+        Mathematics1TF.setColumns(20);
+        Mathematics1TF.setRows(5);
+        jScrollPane3.setViewportView(Mathematics1TF);
 
-        CS2LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        CS2LBL.setText("Chapter 2");
+        Mathematics2LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Mathematics2LBL.setText("Chapter 2");
 
-        CS3LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        CS3LBL.setText("Chapter 3");
+        Mathematics3LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Mathematics3LBL.setText("Chapter 3");
 
         backBTN.setText("BACK");
+        backBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBTNActionPerformed(evt);
+            }
+        });
+
+        Mathematics1BTN.setText("Display 1");
+        Mathematics1BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Mathematics1BTNActionPerformed(evt);
+            }
+        });
+
+        Mathematics2BTN.setText("Display 2");
+        Mathematics2BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Mathematics2BTNActionPerformed(evt);
+            }
+        });
+
+        Mathematics3BTN.setText("Display 3");
+        Mathematics3BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Mathematics3BTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,27 +103,33 @@ public class SideSubject3 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(CS1LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Mathematics1LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(21, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(mathLBL)
-                        .addGap(240, 240, 240))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(CS2LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(CS3LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(backBTN)
-                        .addGap(18, 18, 18))))
+                    .addComponent(Mathematics1BTN)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(mathLBL)
+                            .addGap(240, 240, 240))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(Mathematics2LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Mathematics2BTN))
+                            .addGap(18, 18, 18)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Mathematics3LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Mathematics3BTN))
+                            .addGap(18, 18, 18)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(backBTN)
+                            .addGap(18, 18, 18)))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(118, Short.MAX_VALUE)
@@ -105,15 +142,23 @@ public class SideSubject3 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(mathLBL)
                 .addGap(18, 18, 18)
-                .addComponent(CS1LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(Mathematics1LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addComponent(Mathematics1BTN)
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CS2LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Mathematics2LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Mathematics2BTN)))
                 .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CS3LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Mathematics3LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Mathematics3BTN)))
                 .addGap(26, 26, 26)
                 .addComponent(backBTN)
                 .addContainerGap())
@@ -126,6 +171,28 @@ public class SideSubject3 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Mathematics1BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mathematics1BTNActionPerformed
+        // TODO add your handling code here:
+        String content = sideSubjectsMath.getChapterContent(1);
+    Mathematics1TF.setText(content);
+    }//GEN-LAST:event_Mathematics1BTNActionPerformed
+
+    private void Mathematics2BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mathematics2BTNActionPerformed
+         String content = sideSubjectsMath.getChapterContent(2);
+    Mathematics2TF.setText(content);
+    }//GEN-LAST:event_Mathematics2BTNActionPerformed
+
+    private void Mathematics3BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Mathematics3BTNActionPerformed
+     String content = sideSubjectsMath.getChapterContent(3);
+    Mathematics3TF.setText(content);
+    }//GEN-LAST:event_Mathematics3BTNActionPerformed
+
+    private void backBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBTNActionPerformed
+        setVisible(false);//remove the current screen
+        SideSubject ss = new SideSubject();//Link Sidesubjerct to the home page
+        ss.setVisible(true);//set its visibility to true
+    }//GEN-LAST:event_backBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,12 +231,15 @@ public class SideSubject3 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel CS1LBL;
-    private javax.swing.JTextArea CS1TF2;
-    private javax.swing.JLabel CS2LBL;
-    private javax.swing.JTextArea CS2TF;
-    private javax.swing.JLabel CS3LBL;
-    private javax.swing.JTextArea CS3TF;
+    private javax.swing.JButton Mathematics1BTN;
+    private javax.swing.JLabel Mathematics1LBL;
+    private javax.swing.JTextArea Mathematics1TF;
+    private javax.swing.JButton Mathematics2BTN;
+    private javax.swing.JLabel Mathematics2LBL;
+    private javax.swing.JTextArea Mathematics2TF;
+    private javax.swing.JButton Mathematics3BTN;
+    private javax.swing.JLabel Mathematics3LBL;
+    private javax.swing.JTextArea Mathematics3TF;
     private javax.swing.JButton backBTN;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
