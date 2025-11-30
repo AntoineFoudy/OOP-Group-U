@@ -39,6 +39,8 @@ public class HomePage extends javax.swing.JFrame {
         flashCardsLBL = new javax.swing.JLabel();
         tab4 = new javax.swing.JPanel();
         quizLBL = new javax.swing.JLabel();
+        EXIT = new javax.swing.JPanel();
+        exitLBL = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -140,7 +142,7 @@ public class HomePage extends javax.swing.JFrame {
             tab4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tab4Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(quizLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(quizLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tab4Layout.setVerticalGroup(
@@ -148,6 +150,31 @@ public class HomePage extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tab4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(quizLBL)
+                .addContainerGap())
+        );
+
+        exitLBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        exitLBL.setText("Exit");
+        exitLBL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitLBLMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout EXITLayout = new javax.swing.GroupLayout(EXIT);
+        EXIT.setLayout(EXITLayout);
+        EXITLayout.setHorizontalGroup(
+            EXITLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EXITLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(exitLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        EXITLayout.setVerticalGroup(
+            EXITLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EXITLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exitLBL)
                 .addContainerGap())
         );
 
@@ -167,6 +194,7 @@ public class HomePage extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addComponent(tab4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(EXIT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +211,9 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(tab3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(tab4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(EXIT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
 
         jPanel2.setBackground(new java.awt.Color(153, 204, 255));
@@ -263,6 +293,11 @@ public class HomePage extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_flashCardsLBLMouseClicked
 
+    private void exitLBLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLBLMouseClicked
+        // TODO add your handling code here:
+       System.exit(0);
+    }//GEN-LAST:event_exitLBLMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -300,8 +335,10 @@ public class HomePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel EXIT;
     private javax.swing.JLabel SideSubjectLBL;
     private javax.swing.JLabel coreSubjectLBL;
+    private javax.swing.JLabel exitLBL;
     private javax.swing.JLabel flashCardsLBL;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
