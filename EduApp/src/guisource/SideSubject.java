@@ -36,8 +36,6 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
     private void initComponents() {
 
         HomePagePanel = new javax.swing.JPanel();
-        NotesLogoLBL = new javax.swing.JLabel();
-        NotesTitleLBL = new javax.swing.JLabel();
         RecourceHubLogoLabel = new javax.swing.JLabel();
         RecourceHubLabel = new javax.swing.JLabel();
         ContactUsLogoLabel = new javax.swing.JLabel();
@@ -97,24 +95,6 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         HomePagePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)));
         HomePagePanel.setLayout(null);
 
-        NotesLogoLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        NotesLogoLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/document.png"))); // NOI18N
-        NotesLogoLBL.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        NotesLogoLBL.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                NotesLogoLBLMouseClicked(evt);
-            }
-        });
-        HomePagePanel.add(NotesLogoLBL);
-        NotesLogoLBL.setBounds(30, 30, 70, 70);
-
-        NotesTitleLBL.setFont(new java.awt.Font("Bauhaus 93", 1, 12)); // NOI18N
-        NotesTitleLBL.setForeground(new java.awt.Color(255, 255, 255));
-        NotesTitleLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        NotesTitleLBL.setText("Notes");
-        HomePagePanel.add(NotesTitleLBL);
-        NotesTitleLBL.setBounds(10, 100, 100, 24);
-
         RecourceHubLogoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         RecourceHubLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/book.png"))); // NOI18N
         RecourceHubLogoLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -124,14 +104,14 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
             }
         });
         HomePagePanel.add(RecourceHubLogoLabel);
-        RecourceHubLogoLabel.setBounds(20, 210, 80, 70);
+        RecourceHubLogoLabel.setBounds(30, 20, 80, 70);
 
         RecourceHubLabel.setFont(new java.awt.Font("Bauhaus 93", 1, 12)); // NOI18N
         RecourceHubLabel.setForeground(new java.awt.Color(255, 255, 255));
         RecourceHubLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         RecourceHubLabel.setText("Recource hub");
         HomePagePanel.add(RecourceHubLabel);
-        RecourceHubLabel.setBounds(10, 280, 100, 18);
+        RecourceHubLabel.setBounds(20, 100, 100, 18);
 
         ContactUsLogoLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ContactUsLogoLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/communicate.png"))); // NOI18N
@@ -756,10 +736,6 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         // TODO add your handling code here:
     }//GEN-LAST:event_ContactUsFirstNameFieldActionPerformed
 
-    private void NotesLogoLBLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NotesLogoLBLMouseClicked
-    
-    }//GEN-LAST:event_NotesLogoLBLMouseClicked
-
     private void RecourceHubLogoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RecourceHubLogoLabelMouseClicked
         Parent.removeAll();//using the card layout to switch  beetween panels, so i remove all at the beginning to avoid overlapping
         Parent.add(ResourceHubPNL);//call upon the desired panel that the end user has clicked
@@ -910,8 +886,6 @@ setVisible(false);
     private javax.swing.JLabel ManageRecourceLabel;
     private javax.swing.JLabel ManageResourcesLabel;
     private javax.swing.JPanel ManageResourcesPNL;
-    private javax.swing.JLabel NotesLogoLBL;
-    private javax.swing.JLabel NotesTitleLBL;
     private javax.swing.JPanel Parent;
     private javax.swing.JLabel RecourceHubLabel;
     private javax.swing.JLabel RecourceHubLogoLabel;
