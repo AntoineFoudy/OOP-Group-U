@@ -140,6 +140,11 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         NotesLBL.setBounds(40, 280, 31, 18);
 
         notesLogoLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/document.png"))); // NOI18N
+        notesLogoLBL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                notesLogoLBLMouseClicked(evt);
+            }
+        });
         HomePagePanel.add(notesLogoLBL);
         notesLogoLBL.setBounds(30, 190, 64, 90);
 
@@ -830,6 +835,12 @@ setVisible(false);
         SideSubject3 ss3 = new SideSubject3();
        ss3.setVisible(true);
     }//GEN-LAST:event_ChemistryiconMouseClicked
+
+    private void notesLogoLBLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_notesLogoLBLMouseClicked
+       setVisible(false);
+        SideNotes sidenotes = new SideNotes();
+       sidenotes.setVisible(true);
+    }//GEN-LAST:event_notesLogoLBLMouseClicked
 
     /**
      * @param args the command line arguments

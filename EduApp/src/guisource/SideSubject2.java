@@ -45,10 +45,10 @@ public class SideSubject2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        chemistryLBL.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        chemistryLBL.setFont(new java.awt.Font("Berlin Sans FB", 1, 36)); // NOI18N
         chemistryLBL.setText("Chemistry");
 
-        chemistry1LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        chemistry1LBL.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         chemistry1LBL.setText("Chapter 1");
 
         chemistry2TF.setColumns(20);
@@ -63,12 +63,14 @@ public class SideSubject2 extends javax.swing.JFrame {
         chemistry1TF.setRows(5);
         jScrollPane3.setViewportView(chemistry1TF);
 
-        chemistry2LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        chemistry2LBL.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         chemistry2LBL.setText("Chapter 2");
 
-        chemistry3LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        chemistry3LBL.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         chemistry3LBL.setText("Chapter 3");
 
+        backBTN.setBackground(new java.awt.Color(255, 0, 51));
+        backBTN.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         backBTN.setText("BACK");
         backBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +78,8 @@ public class SideSubject2 extends javax.swing.JFrame {
             }
         });
 
+        chemistry1BTN.setBackground(new java.awt.Color(102, 153, 255));
+        chemistry1BTN.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         chemistry1BTN.setText("Display 1");
         chemistry1BTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +87,8 @@ public class SideSubject2 extends javax.swing.JFrame {
             }
         });
 
+        chemistry2BTN.setBackground(new java.awt.Color(102, 153, 255));
+        chemistry2BTN.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         chemistry2BTN.setText("Display 2");
         chemistry2BTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +96,8 @@ public class SideSubject2 extends javax.swing.JFrame {
             }
         });
 
+        chemistry3BTN.setBackground(new java.awt.Color(102, 153, 255));
+        chemistry3BTN.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         chemistry3BTN.setText("Display 3");
         chemistry3BTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +119,7 @@ public class SideSubject2 extends javax.swing.JFrame {
                         .addComponent(chemistryLBL)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(chemistry1BTN)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,7 +153,7 @@ public class SideSubject2 extends javax.swing.JFrame {
                 .addComponent(chemistryLBL)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(chemistry1LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addComponent(chemistry1BTN)
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)

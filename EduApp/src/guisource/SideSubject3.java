@@ -45,10 +45,10 @@ public class SideSubject3 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        mathLBL.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        mathLBL.setFont(new java.awt.Font("Berlin Sans FB", 1, 36)); // NOI18N
         mathLBL.setText("Mathematics");
 
-        Mathematics1LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Mathematics1LBL.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         Mathematics1LBL.setText("Chapter 1");
 
         Mathematics2TF.setColumns(20);
@@ -63,12 +63,14 @@ public class SideSubject3 extends javax.swing.JFrame {
         Mathematics1TF.setRows(5);
         jScrollPane3.setViewportView(Mathematics1TF);
 
-        Mathematics2LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Mathematics2LBL.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         Mathematics2LBL.setText("Chapter 2");
 
-        Mathematics3LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Mathematics3LBL.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         Mathematics3LBL.setText("Chapter 3");
 
+        backBTN.setBackground(new java.awt.Color(255, 0, 51));
+        backBTN.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         backBTN.setText("BACK");
         backBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +78,8 @@ public class SideSubject3 extends javax.swing.JFrame {
             }
         });
 
+        Mathematics1BTN.setBackground(new java.awt.Color(102, 153, 255));
+        Mathematics1BTN.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         Mathematics1BTN.setText("Display 1");
         Mathematics1BTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +87,8 @@ public class SideSubject3 extends javax.swing.JFrame {
             }
         });
 
+        Mathematics2BTN.setBackground(new java.awt.Color(102, 153, 255));
+        Mathematics2BTN.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         Mathematics2BTN.setText("Display 2");
         Mathematics2BTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +96,8 @@ public class SideSubject3 extends javax.swing.JFrame {
             }
         });
 
+        Mathematics3BTN.setBackground(new java.awt.Color(102, 153, 255));
+        Mathematics3BTN.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         Mathematics3BTN.setText("Display 3");
         Mathematics3BTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +114,7 @@ public class SideSubject3 extends javax.swing.JFrame {
                 .addComponent(Mathematics1LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Mathematics1BTN)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +151,7 @@ public class SideSubject3 extends javax.swing.JFrame {
                 .addComponent(mathLBL)
                 .addGap(18, 18, 18)
                 .addComponent(Mathematics1LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addComponent(Mathematics1BTN)
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)

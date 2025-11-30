@@ -46,10 +46,10 @@ public class SideSubject1 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 1, 36)); // NOI18N
         jLabel1.setText("Computer Science ");
 
-        CS1LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CS1LBL.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         CS1LBL.setText("Chapter 1");
 
         CS2TF.setColumns(20);
@@ -64,12 +64,14 @@ public class SideSubject1 extends javax.swing.JFrame {
         CS1TF2.setRows(5);
         jScrollPane3.setViewportView(CS1TF2);
 
-        CS2LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CS2LBL.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         CS2LBL.setText("Chapter 2");
 
-        CS3LBL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CS3LBL.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         CS3LBL.setText("Chapter 3");
 
+        backBTN.setBackground(new java.awt.Color(255, 0, 51));
+        backBTN.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         backBTN.setText("BACK");
         backBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +79,8 @@ public class SideSubject1 extends javax.swing.JFrame {
             }
         });
 
+        CS1BTN.setBackground(new java.awt.Color(102, 153, 255));
+        CS1BTN.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         CS1BTN.setText("Display");
         CS1BTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,6 +88,8 @@ public class SideSubject1 extends javax.swing.JFrame {
             }
         });
 
+        CS2BTN.setBackground(new java.awt.Color(102, 153, 255));
+        CS2BTN.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         CS2BTN.setText("Display");
         CS2BTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +97,8 @@ public class SideSubject1 extends javax.swing.JFrame {
             }
         });
 
+        CS3BTN.setBackground(new java.awt.Color(102, 153, 255));
+        CS3BTN.setFont(new java.awt.Font("Berlin Sans FB", 1, 14)); // NOI18N
         CS3BTN.setText("Display");
         CS3BTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +119,7 @@ public class SideSubject1 extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(240, 240, 240))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(14, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(CS1BTN)
@@ -149,7 +157,7 @@ public class SideSubject1 extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(52, 52, 52)
                 .addComponent(CS1LBL, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(CS1BTN)
                 .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
