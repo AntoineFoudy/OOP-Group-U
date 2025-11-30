@@ -6,7 +6,9 @@ package SideSubject;
 
 /**
  *
- * @author shoai
+ * @author shoaib
+ * Class representing a single Chapter in a side subject.
+ * Each chapter has a number, a title, and content.
  */
 public class Chapter {
     private int chapterNumber;
@@ -20,9 +22,20 @@ public class Chapter {
     }
 
     // Getters and setters
-    public int getChapterNumber() { return chapterNumber; }
-    public String getTitle() { return title; }
-    public String getContent() { return content; }
+    public int getChapterNumber() {
+        return chapterNumber;
+    }
 
-    public void setContent(String content) { this.content = content; }
+    public String getTitle() {
+        return title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+ 
+
+    public void setContent(String content) {
+        this.content = content; 
+    }
 }

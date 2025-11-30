@@ -1,15 +1,23 @@
 package SideSubject;
 
+/**
+ *
+ * @author Shoaib 
+ * Add ArrayList Example just for the SideSubject1 
+ * Loads chapters from text files into the chapters ArrayList.
+ * Creates the file if it does not exist.
+ */
 import java.io.*;
 import java.util.ArrayList;
 
 public class sideSubjects {
 
+        // Base path for storing chapter text files
     private static final String basePath = "C:\\Users\\shoai\\OneDrive - National College of Ireland\\Semester One\\Object Oriented Programming\\OOP-Group-U\\EduApp\\src\\SideSubject\\ComputerScience\\";
 
-    private ArrayList<Chapter> chapters;
+    private ArrayList<Chapter> chapters;    // List to store Chapter objects
 
-    public sideSubjects() {
+    public sideSubjects() {// Constructor initialises the chapters list
         chapters = new ArrayList<>();
     }
 
@@ -46,25 +54,25 @@ public class sideSubjects {
         return "Chapter not found!";
     }
 
-    // Add new chapter content
-    public void addChapterContent(int chapterNumber, String content) {
-        for (Chapter ch : chapters) {
-            if (ch.getChapterNumber() == chapterNumber) {
-                ch.setContent(content);
-                saveChapterToFile(ch);
-                return;
-            }
-        }
-        Chapter newChapter = new Chapter(chapterNumber, "Chapter " + chapterNumber, content);
-        chapters.add(newChapter);
-        saveChapterToFile(newChapter);
-    }
-
-    private void saveChapterToFile(Chapter ch) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(basePath + "Chapter" + ch.getChapterNumber() + ".txt"))) {
-            bw.write(ch.getContent());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    // Add new chapter content
+//    public void addChapterContent(int chapterNumber, String content) {
+//        for (Chapter ch : chapters) {
+//            if (ch.getChapterNumber() == chapterNumber) {
+//                ch.setContent(content);
+//                saveChapterToFile(ch);
+//                return;
+//            }
+//        }
+//        Chapter newChapter = new Chapter(chapterNumber, "Chapter " + chapterNumber, content);
+//        chapters.add(newChapter);
+//        saveChapterToFile(newChapter);
+//    }
+//
+//    private void saveChapterToFile(Chapter ch) {
+//        try (BufferedWriter bw = new BufferedWriter(new FileWriter(basePath + "Chapter" + ch.getChapterNumber() + ".txt"))) {
+//            bw.write(ch.getContent());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
