@@ -181,17 +181,23 @@ public class SideSubject1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CS1BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS1BTNActionPerformed
-        String content = sideSubjects.getChapterContent(1);
+      sideSubjects cs = new sideSubjects();
+    cs.loadChapters(); // load all chapters first
+    String content = cs.getChapterContent(1); // get chapter 1 content
     CS1TF2.setText(content);
     }//GEN-LAST:event_CS1BTNActionPerformed
 
     private void CS2BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS2BTNActionPerformed
-   String content = sideSubjects.getChapterContent(2);
+   sideSubjects cs = new sideSubjects();
+    cs.loadChapters(); // load all chapters first
+    String content = cs.getChapterContent(2);// get chapter 2 content
     CS2TF.setText(content);
     }//GEN-LAST:event_CS2BTNActionPerformed
 
     private void CS3BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CS3BTNActionPerformed
- String content = sideSubjects.getChapterContent(3);
+ sideSubjects cs = new sideSubjects();
+    cs.loadChapters();// load all chapters first
+    String content = cs.getChapterContent(3);// get chapter 3 content
     CS3TF.setText(content);
     }//GEN-LAST:event_CS3BTNActionPerformed
 

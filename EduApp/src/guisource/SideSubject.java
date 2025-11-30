@@ -165,7 +165,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
         ManageResourcesLabel.setFont(new java.awt.Font("Bauhaus 93", 1, 12)); // NOI18N
         ManageResourcesLabel.setForeground(new java.awt.Color(255, 255, 255));
         ManageResourcesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ManageResourcesLabel.setText("Manage recources");
+        ManageResourcesLabel.setText("Reading recources");
 
         javax.swing.GroupLayout ResourceHubNavPNLLayout = new javax.swing.GroupLayout(ResourceHubNavPNL);
         ResourceHubNavPNL.setLayout(ResourceHubNavPNLLayout);
@@ -176,7 +176,7 @@ public class SideSubject extends javax.swing.JFrame {//creating the jframe for t
                 .addGroup(ResourceHubNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(sideSubjectsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TutorialLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 392, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 391, Short.MAX_VALUE)
                 .addGroup(ResourceHubNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResourceHubNavPNLLayout.createSequentialGroup()
                         .addComponent(ManageRecourceLabel)
