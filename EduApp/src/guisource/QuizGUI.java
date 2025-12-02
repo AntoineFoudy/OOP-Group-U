@@ -8,8 +8,7 @@ import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.ChangeEvent;
+
 /**
  *
  * @author ikram
@@ -358,8 +357,8 @@ public class QuizGUI extends javax.swing.JFrame {
         CardPNL = new javax.swing.JPanel();
         CorePNL = new javax.swing.JPanel();
         TitlePNL = new javax.swing.JPanel();
-        LogoLBL = new javax.swing.JLabel();
         TitleLBL = new javax.swing.JLabel();
+        LogoLBL = new javax.swing.JLabel();
         QuizSubjectsPNL = new javax.swing.JPanel();
         MathsRB = new javax.swing.JRadioButton();
         BiologyRB = new javax.swing.JRadioButton();
@@ -376,8 +375,8 @@ public class QuizGUI extends javax.swing.JFrame {
         DisplayTA = new javax.swing.JTextArea();
         SidePNL = new javax.swing.JPanel();
         TitlePNL1 = new javax.swing.JPanel();
-        LogoLBL1 = new javax.swing.JLabel();
         TitleLBL1 = new javax.swing.JLabel();
+        LogoLBL1 = new javax.swing.JLabel();
         QuizSubjectsPNL1 = new javax.swing.JPanel();
         MathematicsRB = new javax.swing.JRadioButton();
         ChemistryRB = new javax.swing.JRadioButton();
@@ -393,6 +392,9 @@ public class QuizGUI extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         DisplayTA1 = new javax.swing.JTextArea();
         EditPNL = new javax.swing.JPanel();
+        TitlePNL2 = new javax.swing.JPanel();
+        TitleLBL2 = new javax.swing.JLabel();
+        LogoLBL2 = new javax.swing.JLabel();
         QuestionIDLBL = new javax.swing.JLabel();
         QuestionIDTF = new javax.swing.JTextField();
         SubjectLBL = new javax.swing.JLabel();
@@ -403,12 +405,19 @@ public class QuizGUI extends javax.swing.JFrame {
         OptionALBL = new javax.swing.JLabel();
         OptionATF = new javax.swing.JTextField();
         OptionBLBL = new javax.swing.JLabel();
+        QuestionIDLBL1 = new javax.swing.JLabel();
+        QuestionIDTF1 = new javax.swing.JTextField();
+        SubjectLBL1 = new javax.swing.JLabel();
+        SubjectCB1 = new javax.swing.JComboBox<>();
+        QuestionLBL1 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        QuestionTA4 = new javax.swing.JTextArea();
         OptionBTF = new javax.swing.JTextField();
         OptionCLBL = new javax.swing.JLabel();
         OptionCTF = new javax.swing.JTextField();
         CorrectLBL = new javax.swing.JLabel();
         CorrectCB = new javax.swing.JComboBox<>();
-        AddQuestionBTN = new javax.swing.JButton();
+        AddModifyQsBTN = new javax.swing.JButton();
         SearchQuestionBTN = new javax.swing.JButton();
         DeleteQuestionBTN = new javax.swing.JButton();
         ClearBTN = new javax.swing.JButton();
@@ -440,12 +449,14 @@ public class QuizGUI extends javax.swing.JFrame {
         CoreNavPNLLayout.setHorizontalGroup(
             CoreNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CoreNavPNLLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(CoreNavLBL)
+                .addGap(17, 17, 17)
+                .addGroup(CoreNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CoreNavPNLLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(CoreNavLBL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CoreNavIcon))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(CoreNavPNLLayout.createSequentialGroup()
-                .addComponent(CoreNavIcon)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         CoreNavPNLLayout.setVerticalGroup(
             CoreNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -476,21 +487,23 @@ public class QuizGUI extends javax.swing.JFrame {
         SideNavPNLLayout.setHorizontalGroup(
             SideNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SideNavPNLLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(SideNavLBL)
+                .addGap(16, 16, 16)
+                .addGroup(SideNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SideNavPNLLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(SideNavLBL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SideNavIcon))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(SideNavPNLLayout.createSequentialGroup()
-                .addComponent(SideNavIcon)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         SideNavPNLLayout.setVerticalGroup(
             SideNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SideNavPNLLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideNavPNLLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(SideNavIcon)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SideNavLBL)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         EditNavPNL.setBackground(new java.awt.Color(153, 153, 255));
@@ -511,13 +524,15 @@ public class QuizGUI extends javax.swing.JFrame {
         EditNavPNL.setLayout(EditNavPNLLayout);
         EditNavPNLLayout.setHorizontalGroup(
             EditNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EditNavPNLLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(EditNavLBL)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(EditNavPNLLayout.createSequentialGroup()
-                .addComponent(EditNavIcon)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditNavPNLLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(EditNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EditNavPNLLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(EditNavLBL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(EditNavIcon))
+                .addGap(17, 17, 17))
         );
         EditNavPNLLayout.setVerticalGroup(
             EditNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -541,28 +556,27 @@ public class QuizGUI extends javax.swing.JFrame {
 
         MainMenuLBL.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         MainMenuLBL.setForeground(new java.awt.Color(255, 255, 255));
-        MainMenuLBL.setText("Edit");
+        MainMenuLBL.setText("Main Menu");
 
         javax.swing.GroupLayout MainMenuBTNLayout = new javax.swing.GroupLayout(MainMenuBTN);
         MainMenuBTN.setLayout(MainMenuBTNLayout);
         MainMenuBTNLayout.setHorizontalGroup(
             MainMenuBTNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainMenuBTNLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(MainMenuLBL)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(MainMenuBTNLayout.createSequentialGroup()
-                .addComponent(MainMenuIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addGroup(MainMenuBTNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(MainMenuLBL)
+                    .addComponent(MainMenuIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         MainMenuBTNLayout.setVerticalGroup(
             MainMenuBTNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MainMenuBTNLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(MainMenuIcon)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(MainMenuLBL)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout NavPNLLayout = new javax.swing.GroupLayout(NavPNL);
@@ -587,7 +601,7 @@ public class QuizGUI extends javax.swing.JFrame {
                 .addGap(0, 107, Short.MAX_VALUE))
         );
 
-        getContentPane().add(NavPNL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 550));
+        getContentPane().add(NavPNL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 550));
 
         LinePNL.setBackground(new java.awt.Color(153, 204, 255));
         LinePNL.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -603,7 +617,7 @@ public class QuizGUI extends javax.swing.JFrame {
             .addGap(0, 546, Short.MAX_VALUE)
         );
 
-        getContentPane().add(LinePNL, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 10, 550));
+        getContentPane().add(LinePNL, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 10, 550));
 
         CardPNL.setBackground(new java.awt.Color(0, 102, 102));
         CardPNL.setLayout(new java.awt.CardLayout());
@@ -614,47 +628,52 @@ public class QuizGUI extends javax.swing.JFrame {
 
         TitlePNL.setBackground(new java.awt.Color(0, 102, 102));
 
-        LogoLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/quiz logo.png"))); // NOI18N
-
         TitleLBL.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         TitleLBL.setForeground(new java.awt.Color(255, 255, 255));
         TitleLBL.setText("Quiz");
+
+        LogoLBL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/quiz-icon.png"))); // NOI18N
 
         javax.swing.GroupLayout TitlePNLLayout = new javax.swing.GroupLayout(TitlePNL);
         TitlePNL.setLayout(TitlePNLLayout);
         TitlePNLLayout.setHorizontalGroup(
             TitlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TitlePNLLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(14, 14, 14)
                 .addComponent(TitleLBL)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LogoLBL)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(LogoLBL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         TitlePNLLayout.setVerticalGroup(
             TitlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitlePNLLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(TitlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(TitlePNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LogoLBL)
-                    .addComponent(TitleLBL))
+                    .addGroup(TitlePNLLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(TitleLBL)))
                 .addGap(20, 20, 20))
         );
 
-        CorePNL.add(TitlePNL, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 170, 70));
+        CorePNL.add(TitlePNL, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 180, 80));
 
         QuizSubjectsPNL.setBackground(new java.awt.Color(0, 0, 0));
         QuizSubjectsPNL.setForeground(new java.awt.Color(255, 255, 255));
 
         MathsRB.setBackground(new java.awt.Color(0, 0, 0));
+        SubjectsBG.add(MathsRB);
         MathsRB.setForeground(new java.awt.Color(255, 255, 255));
         MathsRB.setText("Maths");
 
         BiologyRB.setBackground(new java.awt.Color(0, 0, 0));
+        SubjectsBG.add(BiologyRB);
         BiologyRB.setForeground(new java.awt.Color(255, 255, 255));
         BiologyRB.setText("Biology");
 
         PhysicsRB.setBackground(new java.awt.Color(0, 0, 0));
+        SubjectsBG.add(PhysicsRB);
         PhysicsRB.setForeground(new java.awt.Color(255, 255, 255));
         PhysicsRB.setText("Physics");
 
@@ -682,12 +701,13 @@ public class QuizGUI extends javax.swing.JFrame {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        CorePNL.add(QuizSubjectsPNL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 90));
+        CorePNL.add(QuizSubjectsPNL, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, 90));
 
         TimerLBL.setForeground(new java.awt.Color(255, 255, 255));
         TimerLBL.setText("Timer:");
-        CorePNL.add(TimerLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
+        CorePNL.add(TimerLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, -1));
 
+        TimerTA.setEditable(false);
         TimerTA.setBackground(new java.awt.Color(0, 0, 0));
         TimerTA.setColumns(20);
         TimerTA.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -695,26 +715,29 @@ public class QuizGUI extends javax.swing.JFrame {
         TimerTA.setRows(5);
         jScrollPane1.setViewportView(TimerTA);
 
-        CorePNL.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 210, 110));
+        CorePNL.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 210, 110));
 
         SelectAnsLBL.setForeground(new java.awt.Color(255, 255, 255));
         SelectAnsLBL.setText("Select Answer:");
-        CorePNL.add(SelectAnsLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
+        CorePNL.add(SelectAnsLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
 
         AnswerARB.setBackground(new java.awt.Color(0, 0, 0));
+        AnswersBG.add(AnswerARB);
         AnswerARB.setForeground(new java.awt.Color(255, 255, 255));
         AnswerARB.setText("A");
-        CorePNL.add(AnswerARB, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 50, -1));
+        CorePNL.add(AnswerARB, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 50, -1));
 
         AnswerBRB.setBackground(new java.awt.Color(0, 0, 0));
+        AnswersBG.add(AnswerBRB);
         AnswerBRB.setForeground(new java.awt.Color(255, 255, 255));
         AnswerBRB.setText("B");
-        CorePNL.add(AnswerBRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 50, -1));
+        CorePNL.add(AnswerBRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 50, -1));
 
         AnswerCRB.setBackground(new java.awt.Color(0, 0, 0));
+        AnswersBG.add(AnswerCRB);
         AnswerCRB.setForeground(new java.awt.Color(255, 255, 255));
         AnswerCRB.setText("C");
-        CorePNL.add(AnswerCRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 50, -1));
+        CorePNL.add(AnswerCRB, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 50, -1));
 
         AnswerBTN.setBackground(new java.awt.Color(0, 0, 0));
         AnswerBTN.setForeground(new java.awt.Color(255, 255, 255));
@@ -724,15 +747,16 @@ public class QuizGUI extends javax.swing.JFrame {
                 AnswerBTNActionPerformed(evt);
             }
         });
-        CorePNL.add(AnswerBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, -1));
+        CorePNL.add(AnswerBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
 
+        DisplayTA.setEditable(false);
         DisplayTA.setBackground(new java.awt.Color(0, 0, 0));
         DisplayTA.setColumns(20);
         DisplayTA.setForeground(new java.awt.Color(255, 255, 255));
         DisplayTA.setRows(5);
         jScrollPane.setViewportView(DisplayTA);
 
-        CorePNL.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 328, 133));
+        CorePNL.add(jScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 328, 133));
 
         CardPNL.add(CorePNL, "card2");
 
@@ -742,20 +766,20 @@ public class QuizGUI extends javax.swing.JFrame {
 
         TitlePNL1.setBackground(new java.awt.Color(0, 102, 102));
 
-        LogoLBL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/quiz logo.png"))); // NOI18N
-
         TitleLBL1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         TitleLBL1.setForeground(new java.awt.Color(255, 255, 255));
         TitleLBL1.setText("Quiz");
+
+        LogoLBL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/quiz-icon.png"))); // NOI18N
 
         javax.swing.GroupLayout TitlePNL1Layout = new javax.swing.GroupLayout(TitlePNL1);
         TitlePNL1.setLayout(TitlePNL1Layout);
         TitlePNL1Layout.setHorizontalGroup(
             TitlePNL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TitlePNL1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addComponent(TitleLBL1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(LogoLBL1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -763,26 +787,31 @@ public class QuizGUI extends javax.swing.JFrame {
             TitlePNL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitlePNL1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(TitlePNL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(LogoLBL1)
-                    .addComponent(TitleLBL1))
+                .addComponent(LogoLBL1)
                 .addGap(20, 20, 20))
+            .addGroup(TitlePNL1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(TitleLBL1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        SidePNL.add(TitlePNL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 170, 70));
+        SidePNL.add(TitlePNL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 170, 80));
 
         QuizSubjectsPNL1.setBackground(new java.awt.Color(0, 0, 0));
         QuizSubjectsPNL1.setForeground(new java.awt.Color(255, 255, 255));
 
         MathematicsRB.setBackground(new java.awt.Color(0, 0, 0));
+        SubjectsBG.add(MathematicsRB);
         MathematicsRB.setForeground(new java.awt.Color(255, 255, 255));
         MathematicsRB.setText("Mathematics");
 
         ChemistryRB.setBackground(new java.awt.Color(0, 0, 0));
+        SubjectsBG.add(ChemistryRB);
         ChemistryRB.setForeground(new java.awt.Color(255, 255, 255));
         ChemistryRB.setText("Chemistry");
 
         CompSciRB.setBackground(new java.awt.Color(0, 0, 0));
+        SubjectsBG.add(CompSciRB);
         CompSciRB.setForeground(new java.awt.Color(255, 255, 255));
         CompSciRB.setText("Computer Science");
 
@@ -810,12 +839,13 @@ public class QuizGUI extends javax.swing.JFrame {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        SidePNL.add(QuizSubjectsPNL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, 90));
+        SidePNL.add(QuizSubjectsPNL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, 90));
 
         TimerLBL1.setForeground(new java.awt.Color(255, 255, 255));
         TimerLBL1.setText("Timer:");
-        SidePNL.add(TimerLBL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, -1, -1));
+        SidePNL.add(TimerLBL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, -1));
 
+        TimerTA1.setEditable(false);
         TimerTA1.setBackground(new java.awt.Color(0, 0, 0));
         TimerTA1.setColumns(20);
         TimerTA1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -823,26 +853,29 @@ public class QuizGUI extends javax.swing.JFrame {
         TimerTA1.setRows(5);
         jScrollPane3.setViewportView(TimerTA1);
 
-        SidePNL.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 220, 110));
+        SidePNL.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 150, 220, 110));
 
         SelectAnsLBL1.setForeground(new java.awt.Color(255, 255, 255));
         SelectAnsLBL1.setText("Select Answer:");
-        SidePNL.add(SelectAnsLBL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        SidePNL.add(SelectAnsLBL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, -1, -1));
 
         AnswerARB1.setBackground(new java.awt.Color(0, 0, 0));
+        AnswersBG.add(AnswerARB1);
         AnswerARB1.setForeground(new java.awt.Color(255, 255, 255));
         AnswerARB1.setText("A");
-        SidePNL.add(AnswerARB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 50, -1));
+        SidePNL.add(AnswerARB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 50, -1));
 
         AnswerBRB1.setBackground(new java.awt.Color(0, 0, 0));
+        AnswersBG.add(AnswerBRB1);
         AnswerBRB1.setForeground(new java.awt.Color(255, 255, 255));
         AnswerBRB1.setText("B");
-        SidePNL.add(AnswerBRB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 50, -1));
+        SidePNL.add(AnswerBRB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 50, -1));
 
         AnswerCRB1.setBackground(new java.awt.Color(0, 0, 0));
+        AnswersBG.add(AnswerCRB1);
         AnswerCRB1.setForeground(new java.awt.Color(255, 255, 255));
         AnswerCRB1.setText("C");
-        SidePNL.add(AnswerCRB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 50, -1));
+        SidePNL.add(AnswerCRB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 50, -1));
 
         AnswerBTN1.setBackground(new java.awt.Color(0, 0, 0));
         AnswerBTN1.setForeground(new java.awt.Color(255, 255, 255));
@@ -852,102 +885,185 @@ public class QuizGUI extends javax.swing.JFrame {
                 AnswerBTN1ActionPerformed(evt);
             }
         });
-        SidePNL.add(AnswerBTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+        SidePNL.add(AnswerBTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
 
+        DisplayTA1.setEditable(false);
         DisplayTA1.setBackground(new java.awt.Color(0, 0, 0));
         DisplayTA1.setColumns(20);
         DisplayTA1.setForeground(new java.awt.Color(255, 255, 255));
         DisplayTA1.setRows(5);
         jScrollPane2.setViewportView(DisplayTA1);
 
-        SidePNL.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 328, 133));
+        SidePNL.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 328, 133));
 
         CardPNL.add(SidePNL, "card3");
 
         EditPNL.setBackground(new java.awt.Color(0, 102, 102));
         EditPNL.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        TitlePNL2.setBackground(new java.awt.Color(0, 102, 102));
+
+        TitleLBL2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        TitleLBL2.setForeground(new java.awt.Color(255, 255, 255));
+        TitleLBL2.setText("Edit");
+
+        LogoLBL2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit-title-icon.png"))); // NOI18N
+
+        javax.swing.GroupLayout TitlePNL2Layout = new javax.swing.GroupLayout(TitlePNL2);
+        TitlePNL2.setLayout(TitlePNL2Layout);
+        TitlePNL2Layout.setHorizontalGroup(
+            TitlePNL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TitlePNL2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(TitleLBL2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LogoLBL2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        TitlePNL2Layout.setVerticalGroup(
+            TitlePNL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TitlePNL2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TitlePNL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LogoLBL2)
+                    .addGroup(TitlePNL2Layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(TitleLBL2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        EditPNL.add(TitlePNL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 160, 80));
+
         QuestionIDLBL.setForeground(new java.awt.Color(255, 255, 255));
         QuestionIDLBL.setText("Question ID:");
-        EditPNL.add(QuestionIDLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        EditPNL.add(QuestionIDLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
         QuestionIDTF.setBackground(new java.awt.Color(0, 0, 0));
         QuestionIDTF.setForeground(new java.awt.Color(255, 255, 255));
-        EditPNL.add(QuestionIDTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 100, -1));
+        QuestionIDTF.setCaretColor(new java.awt.Color(255, 255, 255));
+        QuestionIDTF.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        QuestionIDTF.setSelectedTextColor(new java.awt.Color(153, 255, 255));
+        QuestionIDTF.setSelectionColor(new java.awt.Color(0, 51, 255));
+        EditPNL.add(QuestionIDTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 100, -1));
 
         SubjectLBL.setForeground(new java.awt.Color(255, 255, 255));
         SubjectLBL.setText("Subjects:");
-        EditPNL.add(SubjectLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        EditPNL.add(SubjectLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, -1, -1));
 
         SubjectCB.setBackground(new java.awt.Color(255, 255, 255));
         SubjectCB.setForeground(new java.awt.Color(0, 0, 0));
         SubjectCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maths", "Biology", "Physics", "Computer Science", "Chemistry", "Side Maths" }));
-        EditPNL.add(SubjectCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, -1, -1));
+        EditPNL.add(SubjectCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, -1));
 
         QuestionLBL.setForeground(new java.awt.Color(255, 255, 255));
         QuestionLBL.setText("Question:");
-        EditPNL.add(QuestionLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        EditPNL.add(QuestionLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         QuestionTA3.setBackground(new java.awt.Color(0, 0, 0));
         QuestionTA3.setColumns(20);
         QuestionTA3.setForeground(new java.awt.Color(255, 255, 255));
         QuestionTA3.setRows(5);
+        QuestionTA3.setCaretColor(new java.awt.Color(255, 255, 255));
+        QuestionTA3.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        QuestionTA3.setSelectedTextColor(new java.awt.Color(153, 255, 255));
+        QuestionTA3.setSelectionColor(new java.awt.Color(0, 51, 255));
         jScrollPane4.setViewportView(QuestionTA3);
 
-        EditPNL.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
+        EditPNL.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
 
         OptionALBL.setForeground(new java.awt.Color(255, 255, 255));
         OptionALBL.setText("Option A:");
-        EditPNL.add(OptionALBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        EditPNL.add(OptionALBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, -1, -1));
 
         OptionATF.setBackground(new java.awt.Color(0, 0, 0));
         OptionATF.setForeground(new java.awt.Color(255, 255, 255));
-        EditPNL.add(OptionATF, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 120, -1));
+        OptionATF.setCaretColor(new java.awt.Color(255, 255, 255));
+        OptionATF.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        OptionATF.setSelectedTextColor(new java.awt.Color(153, 255, 255));
+        OptionATF.setSelectionColor(new java.awt.Color(0, 51, 255));
+        EditPNL.add(OptionATF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 120, -1));
 
         OptionBLBL.setForeground(new java.awt.Color(255, 255, 255));
         OptionBLBL.setText("Option B:");
-        EditPNL.add(OptionBLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+        EditPNL.add(OptionBLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, -1));
+
+        QuestionIDLBL1.setForeground(new java.awt.Color(255, 255, 255));
+        QuestionIDLBL1.setText("Question ID:");
+        EditPNL.add(QuestionIDLBL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+
+        QuestionIDTF1.setBackground(new java.awt.Color(0, 0, 0));
+        QuestionIDTF1.setForeground(new java.awt.Color(255, 255, 255));
+        EditPNL.add(QuestionIDTF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 100, -1));
+
+        SubjectLBL1.setForeground(new java.awt.Color(255, 255, 255));
+        SubjectLBL1.setText("Subjects:");
+        EditPNL.add(SubjectLBL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, -1, -1));
+
+        SubjectCB1.setBackground(new java.awt.Color(255, 255, 255));
+        SubjectCB1.setForeground(new java.awt.Color(0, 0, 0));
+        SubjectCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Maths", "Biology", "Physics", "Computer Science", "Chemistry", "Side Maths" }));
+        EditPNL.add(SubjectCB1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, -1));
+
+        QuestionLBL1.setForeground(new java.awt.Color(255, 255, 255));
+        QuestionLBL1.setText("Question:");
+        EditPNL.add(QuestionLBL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+
+        QuestionTA4.setBackground(new java.awt.Color(0, 0, 0));
+        QuestionTA4.setColumns(20);
+        QuestionTA4.setForeground(new java.awt.Color(255, 255, 255));
+        QuestionTA4.setRows(5);
+        jScrollPane6.setViewportView(QuestionTA4);
+
+        EditPNL.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
 
         OptionBTF.setBackground(new java.awt.Color(0, 0, 0));
         OptionBTF.setForeground(new java.awt.Color(255, 255, 255));
+        OptionBTF.setCaretColor(new java.awt.Color(255, 255, 255));
+        OptionBTF.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        OptionBTF.setSelectedTextColor(new java.awt.Color(153, 255, 255));
+        OptionBTF.setSelectionColor(new java.awt.Color(0, 51, 255));
         OptionBTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OptionBTFActionPerformed(evt);
             }
         });
-        EditPNL.add(OptionBTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 120, -1));
+        EditPNL.add(OptionBTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 120, -1));
 
         OptionCLBL.setForeground(new java.awt.Color(255, 255, 255));
         OptionCLBL.setText("Option C:");
-        EditPNL.add(OptionCLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+        EditPNL.add(OptionCLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, -1, -1));
 
         OptionCTF.setBackground(new java.awt.Color(0, 0, 0));
         OptionCTF.setForeground(new java.awt.Color(255, 255, 255));
+        OptionCTF.setCaretColor(new java.awt.Color(255, 255, 255));
+        OptionCTF.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        OptionCTF.setSelectedTextColor(new java.awt.Color(153, 255, 255));
+        OptionCTF.setSelectionColor(new java.awt.Color(0, 51, 255));
         OptionCTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OptionCTFActionPerformed(evt);
             }
         });
-        EditPNL.add(OptionCTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 120, -1));
+        EditPNL.add(OptionCTF, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 120, -1));
 
         CorrectLBL.setForeground(new java.awt.Color(255, 255, 255));
         CorrectLBL.setText("Correct Answer:");
-        EditPNL.add(CorrectLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+        EditPNL.add(CorrectLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, -1));
 
         CorrectCB.setBackground(new java.awt.Color(255, 255, 255));
         CorrectCB.setForeground(new java.awt.Color(0, 0, 0));
         CorrectCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C" }));
-        EditPNL.add(CorrectCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, -1));
+        EditPNL.add(CorrectCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
 
-        AddQuestionBTN.setBackground(new java.awt.Color(0, 0, 0));
-        AddQuestionBTN.setForeground(new java.awt.Color(255, 255, 255));
-        AddQuestionBTN.setText("Add");
-        AddQuestionBTN.addActionListener(new java.awt.event.ActionListener() {
+        AddModifyQsBTN.setBackground(new java.awt.Color(0, 0, 0));
+        AddModifyQsBTN.setForeground(new java.awt.Color(255, 255, 255));
+        AddModifyQsBTN.setText("Add/Modify");
+        AddModifyQsBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddQuestionBTNActionPerformed(evt);
+                AddModifyQsBTNActionPerformed(evt);
             }
         });
-        EditPNL.add(AddQuestionBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
+        EditPNL.add(AddModifyQsBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
         SearchQuestionBTN.setBackground(new java.awt.Color(0, 0, 0));
         SearchQuestionBTN.setForeground(new java.awt.Color(255, 255, 255));
@@ -957,7 +1073,7 @@ public class QuizGUI extends javax.swing.JFrame {
                 SearchQuestionBTNActionPerformed(evt);
             }
         });
-        EditPNL.add(SearchQuestionBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, -1));
+        EditPNL.add(SearchQuestionBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, -1, -1));
 
         DeleteQuestionBTN.setBackground(new java.awt.Color(0, 0, 0));
         DeleteQuestionBTN.setForeground(new java.awt.Color(255, 255, 255));
@@ -967,7 +1083,7 @@ public class QuizGUI extends javax.swing.JFrame {
                 DeleteQuestionBTNActionPerformed(evt);
             }
         });
-        EditPNL.add(DeleteQuestionBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, -1, -1));
+        EditPNL.add(DeleteQuestionBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, -1, -1));
 
         ClearBTN.setBackground(new java.awt.Color(0, 0, 0));
         ClearBTN.setForeground(new java.awt.Color(255, 255, 255));
@@ -977,23 +1093,27 @@ public class QuizGUI extends javax.swing.JFrame {
                 ClearBTNActionPerformed(evt);
             }
         });
-        EditPNL.add(ClearBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, -1, -1));
+        EditPNL.add(ClearBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, -1, -1));
 
         ManageLBL.setForeground(new java.awt.Color(255, 255, 255));
         ManageLBL.setText("Manage:");
-        EditPNL.add(ManageLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+        EditPNL.add(ManageLBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, -1, -1));
 
+        ManageDisplayTA.setEditable(false);
         ManageDisplayTA.setBackground(new java.awt.Color(0, 0, 0));
         ManageDisplayTA.setColumns(20);
         ManageDisplayTA.setForeground(new java.awt.Color(255, 255, 255));
         ManageDisplayTA.setRows(5);
+        ManageDisplayTA.setCaretColor(new java.awt.Color(255, 255, 255));
+        ManageDisplayTA.setDisabledTextColor(new java.awt.Color(255, 255, 255));
+        ManageDisplayTA.setSelectedTextColor(new java.awt.Color(153, 255, 255));
         jScrollPane5.setViewportView(ManageDisplayTA);
 
-        EditPNL.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 360, 120));
+        EditPNL.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 360, 140));
 
         CardPNL.add(EditPNL, "card4");
 
-        getContentPane().add(CardPNL, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 490, 550));
+        getContentPane().add(CardPNL, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 580, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1046,7 +1166,7 @@ public class QuizGUI extends javax.swing.JFrame {
         showCurrentQuestion();
     }//GEN-LAST:event_AnswerBTNActionPerformed
 
-    private void AddQuestionBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddQuestionBTNActionPerformed
+    private void AddModifyQsBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddModifyQsBTNActionPerformed
         // TODO add your handling code here:
         // Read and validate ID
         String idText = QuestionIDTF.getText().trim();
@@ -1071,12 +1191,14 @@ public class QuizGUI extends javax.swing.JFrame {
         String correctStr = (String) CorrectCB.getSelectedItem();
 
         // Simple validation on text fields
-        if (subject == null || subject.isEmpty()
+        if (subject == null 
+            || subject.isEmpty()
             || questionText.isEmpty()
             || optionA.isEmpty()
             || optionB.isEmpty()
             || optionC.isEmpty()
-            || correctStr == null || correctStr.isEmpty()) {
+            || correctStr == null 
+            || correctStr.isEmpty()) {
 
             JOptionPane.showMessageDialog(this, "Please fill in all fields and choose the correct answer.");
             return;
@@ -1085,17 +1207,16 @@ public class QuizGUI extends javax.swing.JFrame {
         char correctAnswer = correctStr.charAt(0); // 'A','B','C'
 
         // Create new Question object from GUI fields
-        QuizData.Question q = new QuizData.Question(id, subject, questionText,
-            optionA, optionB, optionC,
-            correctAnswer);
+        QuizData.Question q = new QuizData.Question(id, subject, questionText, optionA, optionB, optionC, correctAnswer);
 
         // Check if this ID already exists in the bank
-        QuizData.Question existing = QuizData.findQuestionByIdAndSubject(id, subject);
+        QuizData.Question existing = QuizData.findQuestion(id, subject);
 
         if (existing == null) {
             // New question → add it
             QuizData.addQuestion(q);
             ManageDisplayTA.setText("Question added successfully with ID: " + id);
+
         } else {
             // Existing question → update it
             boolean updated = QuizData.updateQuestion(q);
@@ -1106,7 +1227,7 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         }
 
-    }//GEN-LAST:event_AddQuestionBTNActionPerformed
+    }//GEN-LAST:event_AddModifyQsBTNActionPerformed
 
     private void SearchQuestionBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchQuestionBTNActionPerformed
         // TODO add your handling code here:
@@ -1131,7 +1252,7 @@ public class QuizGUI extends javax.swing.JFrame {
             return;
         }
 
-        QuizData.Question q = QuizData.findQuestionByIdAndSubject(id, subject);
+        QuizData.Question q = QuizData.findQuestion(id, subject);
 
         if (q == null) {
             ManageDisplayTA.setText("No question found with ID: " + id);
@@ -1182,17 +1303,17 @@ public class QuizGUI extends javax.swing.JFrame {
             return;
         }
 
-        boolean deleted = QuizData.deleteQuestionByIdAndSubject(id, subject);
+        boolean deleted = QuizData.deleteQuestion(id, subject);
 
         if (deleted) {
             ManageDisplayTA.setText("Question with ID " + id + " deleted.");
 
-            // Optionally clear the input fields
+            // clear input fields
             QuestionTA3.setText("");
             OptionATF.setText("");
             OptionBTF.setText("");
             OptionCTF.setText("");
-            CorrectCB.setSelectedIndex(-1);
+            CorrectCB.setSelectedIndex(0);
         } else {
             ManageDisplayTA.setText("No question found with ID: " + id);
         }
@@ -1209,13 +1330,14 @@ public class QuizGUI extends javax.swing.JFrame {
     private void ClearBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearBTNActionPerformed
         // TODO add your handling code here:
 
+        // Empty fields
         QuestionIDTF.setText("");
         QuestionTA3.setText("");
         OptionATF.setText("");
         OptionBTF.setText("");
         OptionCTF.setText("");
-        CorrectCB.setSelectedIndex(-1);   // no selection
-        SubjectCB.setSelectedIndex(-1);   // no selection
+        CorrectCB.setSelectedIndex(0);   
+        SubjectCB.setSelectedIndex(0);   
         ManageDisplayTA.setText("");
     }//GEN-LAST:event_ClearBTNActionPerformed
 
@@ -1326,7 +1448,7 @@ public class QuizGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddQuestionBTN;
+    private javax.swing.JButton AddModifyQsBTN;
     private javax.swing.JRadioButton AnswerARB;
     private javax.swing.JRadioButton AnswerARB1;
     private javax.swing.JRadioButton AnswerBRB;
@@ -1357,6 +1479,7 @@ public class QuizGUI extends javax.swing.JFrame {
     private javax.swing.JPanel LinePNL;
     private javax.swing.JLabel LogoLBL;
     private javax.swing.JLabel LogoLBL1;
+    private javax.swing.JLabel LogoLBL2;
     private javax.swing.JPanel MainMenuBTN;
     private javax.swing.JLabel MainMenuIcon;
     private javax.swing.JLabel MainMenuLBL;
@@ -1373,9 +1496,13 @@ public class QuizGUI extends javax.swing.JFrame {
     private javax.swing.JTextField OptionCTF;
     private javax.swing.JRadioButton PhysicsRB;
     private javax.swing.JLabel QuestionIDLBL;
+    private javax.swing.JLabel QuestionIDLBL1;
     private javax.swing.JTextField QuestionIDTF;
+    private javax.swing.JTextField QuestionIDTF1;
     private javax.swing.JLabel QuestionLBL;
+    private javax.swing.JLabel QuestionLBL1;
     private javax.swing.JTextArea QuestionTA3;
+    private javax.swing.JTextArea QuestionTA4;
     private javax.swing.JPanel QuizSubjectsPNL;
     private javax.swing.JPanel QuizSubjectsPNL1;
     private javax.swing.JButton SearchQuestionBTN;
@@ -1386,7 +1513,9 @@ public class QuizGUI extends javax.swing.JFrame {
     private javax.swing.JPanel SideNavPNL;
     private javax.swing.JPanel SidePNL;
     private javax.swing.JComboBox<String> SubjectCB;
+    private javax.swing.JComboBox<String> SubjectCB1;
     private javax.swing.JLabel SubjectLBL;
+    private javax.swing.JLabel SubjectLBL1;
     private javax.swing.ButtonGroup SubjectsBG;
     private javax.swing.JLabel TimerLBL;
     private javax.swing.JLabel TimerLBL1;
@@ -1394,13 +1523,16 @@ public class QuizGUI extends javax.swing.JFrame {
     private javax.swing.JTextArea TimerTA1;
     private javax.swing.JLabel TitleLBL;
     private javax.swing.JLabel TitleLBL1;
+    private javax.swing.JLabel TitleLBL2;
     private javax.swing.JPanel TitlePNL;
     private javax.swing.JPanel TitlePNL1;
+    private javax.swing.JPanel TitlePNL2;
     private javax.swing.JScrollPane jScrollPane;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     // End of variables declaration//GEN-END:variables
 }

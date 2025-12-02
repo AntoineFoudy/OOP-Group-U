@@ -89,6 +89,7 @@ public class QuizData {
         public void setCorrectAnswer(char correctAnswer) {
             this.correctAnswer = correctAnswer; 
         }
+
     }
 
     // ===== Data structure to store ALL questions (default + user) =====
@@ -153,7 +154,7 @@ public class QuizData {
     }
 
     // Search question by ID **and subject** (returns null if not found)
-    public static Question findQuestionByIdAndSubject(int id, String subject) {
+    public static Question findQuestion(int id, String subject) {
         for (Question q : questionBank) {
             if (q.getId() == id && q.getSubject().equals(subject)) {
                 return q;
@@ -163,7 +164,7 @@ public class QuizData {
     }
 
     // Delete question by ID **and subject** (returns true if deleted, false if not found)
-    public static boolean deleteQuestionByIdAndSubject(int id, String subject) {
+    public static boolean deleteQuestion(int id, String subject) {
         for (int i = 0; i < questionBank.size(); i++) {
             Question q = questionBank.get(i);
             if (q.getId() == id && q.getSubject().equals(subject)) {
@@ -193,6 +194,19 @@ public class QuizData {
         for (Question q : questionBank) {
             if (q.getSubject().equals(subjectName)) {
                 result.add(q);
+            }
+        }
+        
+        for (int a = 0; a < result.size(); a++) {
+            for (int b = 0; b < result.size() - 1; b++) {
+                int id1 = result.get(b).getId();
+                int id2 = result.get(b + 1).getId();
+
+                if (id1 > id2) {
+                    Question temp = result.get(b);
+                    result.set(b, result.get(b + 1));
+                    result.set(b + 1, temp);
+                }
             }
         }
 
