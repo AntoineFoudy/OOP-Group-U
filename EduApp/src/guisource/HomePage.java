@@ -4,8 +4,7 @@
  */
 package guisource;
 
-import guisource.CoreSubjectHome;
-
+import guisource.CoreHome;
 /**
  *
  * @author Mohammad shoaib
@@ -274,7 +273,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void coreSubjectLBLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coreSubjectLBLMouseClicked
         setVisible(false);//remove the current screen
-        CoreSubjectHome cs = new CoreSubjectHome();//Link Sidesubjerct to the home page
+        CoreHome cs = new CoreHome();//Link Sidesubjerct to the home page
         cs.setVisible(true);//set its visibility to true setVisible(false);//remove the current screen
       
     }//GEN-LAST:event_coreSubjectLBLMouseClicked
