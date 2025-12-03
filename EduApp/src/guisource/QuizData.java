@@ -9,6 +9,12 @@ import java.util.List;
  *
  * @author ikram
  */
+
+/**
+ * Stores *all* quiz questions (default + user-added).
+ * Also provides CRUD operations.
+ */
+
 public class QuizData {
 
     public static class Question {
@@ -18,25 +24,20 @@ public class QuizData {
         private String optionA;
         private String optionB;
         private String optionC;
-        private char correctAnswer;  // 'A', 'B' or 'C'
+        private char correctAns;  // 'A', 'B' or 'C'
 
-        // constructor with ID for CRUD
-        public Question(int id, String subject, String question, String optionA, String optionB, String optionC, char correctAnswer) {
+        // Constructor with ID for CRUD
+        public Question(int id, String subject, String question, String optionA, String optionB, String optionC, char correctAns) {
             this.id = id;
             this.subject = subject;
             this.question = question;
             this.optionA = optionA;
             this.optionB = optionB;
             this.optionC = optionC;
-            this.correctAnswer = correctAnswer;
+            this.correctAns = correctAns;
         }
 
-        // constructor for quiz (no ID, no subject)
-        public Question(String question, String optionA, String optionB, String optionC, char correctAnswer) {
-            this(-1, "", question, optionA, optionB, optionC, correctAnswer);
-        }
-
-        // getters
+        // ===== Getters =====
         public int getId() { 
             return id; 
         }
@@ -61,11 +62,11 @@ public class QuizData {
             return optionC; 
         }
         
-        public char getCorrectAnswer() { 
-            return correctAnswer; 
+        public char getCorrectAns() { 
+            return correctAns; 
         }
 
-        // setters 
+        // ===== Setters =====
         public void setSubject(String subject) { 
             this.subject = subject; 
         }
@@ -86,8 +87,8 @@ public class QuizData {
             this.optionC = optionC; 
         }
         
-        public void setCorrectAnswer(char correctAnswer) {
-            this.correctAnswer = correctAnswer; 
+        public void setCorrectAns(char correctAns) {
+            this.correctAns = correctAns; 
         }
 
     }
@@ -97,11 +98,11 @@ public class QuizData {
 
     // static block: load default questions once class is first used
     static {
-        initDefaultQuestions();
+        initDefaultQs();
     }
 
-    // fill questionBank with original hard-coded questions
-    private static void initDefaultQuestions() {
+    // Fill questionBank with original hard-coded questions
+    private static void initDefaultQs() {
 
         // ===== Maths questions =====
         questionBank.add(new Question(0, "Maths", "What is 2 + 2?", "3", "4", "5", 'B'));
@@ -144,9 +145,10 @@ public class QuizData {
         questionBank.add(new Question(2, "Side Maths", "What is 15 − 6?", "9", "8", "7", 'A'));
         questionBank.add(new Question(3, "Side Maths", "What is 3²?", "6", "9", "12", 'B'));
         questionBank.add(new Question(4, "Side Maths", "What is 20 ÷ 4?", "4", "5", "6", 'B'));
+        
     }
 
-    // ===== CRUD methods for manager tab (Add, Search, Delete, Update) =====
+    // ===== CRUD methods (Add/Update, Search, Delete) =====
 
     // Add a new question (from GUI)
     public static void addQuestion(Question q) {
@@ -187,16 +189,19 @@ public class QuizData {
         return false;
     }
 
-    // ===== Helper: get questions by subject =====
-    private static Question[] getQuestionsForSubject(String subjectName) {
+    // Helper: get questions by subject 
+    // returns them sorted by ID: 0,1,2,3,...
+    private static Question[] getQsForSubject(String subjectName) {
         List<Question> result = new ArrayList<>();
-
+        
+        // Filter questions by subject
         for (Question q : questionBank) {
             if (q.getSubject().equals(subjectName)) {
                 result.add(q);
             }
         }
         
+        // Bubble sort
         for (int a = 0; a < result.size(); a++) {
             for (int b = 0; b < result.size() - 1; b++) {
                 int id1 = result.get(b).getId();
@@ -213,33 +218,34 @@ public class QuizData {
         return result.toArray(new Question[0]);
     }
 
+    // 
     // ===== Maths questions =====
-    public static Question[] getMathsQuestions() {
-        return getQuestionsForSubject("Maths");
+    public static Question[] getMathsQs() {
+        return getQsForSubject("Maths");
     }
 
     // ===== Biology questions =====
-    public static Question[] getBiologyQuestions() {
-        return getQuestionsForSubject("Biology");
+    public static Question[] getBiologyQs() {
+        return getQsForSubject("Biology");
     }
 
     // ===== Physics questions =====
-    public static Question[] getPhysicsQuestions() {
-        return getQuestionsForSubject("Physics");
+    public static Question[] getPhysicsQs() {
+        return getQsForSubject("Physics");
     }
 
     // ===== Computer Science questions =====
-    public static Question[] getComputerScienceQuestions() {
-        return getQuestionsForSubject("Computer Science");
+    public static Question[] getComputerScienceQs() {
+        return getQsForSubject("Computer Science");
     }
 
     // ===== Chemistry questions =====
-    public static Question[] getChemistryQuestions() {
-        return getQuestionsForSubject("Chemistry");
+    public static Question[] getChemistryQs() {
+        return getQsForSubject("Chemistry");
     }
 
     // ===== Side Maths questions =====
-    public static Question[] getSideMathsQuestions() {
-        return getQuestionsForSubject("Side Maths");
+    public static Question[] getSideMathsQs() {
+        return getQsForSubject("Side Maths");
     }
 }

@@ -46,18 +46,15 @@ public class QuizGUI extends javax.swing.JFrame {
         TimerTA1.setEditable(false);
         TimerTA1.setText("0:30");
 
-        // Attach listeners for subject radio buttons and tab changes
+        // Attached listeners to handle what happens when the user selects a subject.
         setupSubjectListeners();        // Core subjects (Maths/Bio/Physics)
         setupSideSubjectListeners();    // Side subjects (CS/Chem/Maths)
 
-        // Question display areas should not be editable by user
-        DisplayTA.setEditable(false);
-        DisplayTA1.setEditable(false);
     }
     
-    // ===== Core timer (for main/core quiz tab) =====
+    // ===== Core timer (for core quiz) =====
     private void initTimer() {
-        // Timer fires every 1000 ms (1 second)
+        // Timer is every 1000ms (1 second)
         timer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -75,8 +72,7 @@ public class QuizGUI extends javax.swing.JFrame {
                 if (remainingSeconds <= 0) {
                     timer.stop();
 
-                    String result = "Time's up!\n\n";
-                    result = result + "Your score: " + score + " out of " + totalQuestions;
+                    String result = "Time's up!\n\nYour score: " + score + " out of " + totalQuestions;
 
                     // Show final result and clear selected answers
                     DisplayTA.setText(result);
@@ -106,8 +102,7 @@ public class QuizGUI extends javax.swing.JFrame {
                 if (sideRemainingSeconds <= 0) {
                     sideTimer.stop();
 
-                    String result = "Time's up!\n\n";
-                    result = result + "Your score: " + sideScore + " out of " + sideTotalQuestions;
+                    String result = "Time's up!\n\nYour score: " + score + " out of " + totalQuestions;
 
                     // Show final result and clear selected answers
                     DisplayTA1.setText(result);
@@ -120,9 +115,9 @@ public class QuizGUI extends javax.swing.JFrame {
     // ===== Attach listeners to core subject radio buttons =====
     private void setupSubjectListeners() {
         // When each subject is selected, load its questions and start timer
-        MathsRB.addActionListener(e -> loadSubject("Maths"));
-        BiologyRB.addActionListener(e -> loadSubject("Biology"));
-        PhysicsRB.addActionListener(e -> loadSubject("Physics"));
+        MathsRB.addActionListener(e -> loadCoreSubject("Maths"));
+        BiologyRB.addActionListener(e -> loadCoreSubject("Biology"));
+        PhysicsRB.addActionListener(e -> loadCoreSubject("Physics"));
     }
 
     // ===== Attach listeners to side subject radio buttons =====
@@ -133,14 +128,14 @@ public class QuizGUI extends javax.swing.JFrame {
     }
 
     // ===== Load core subject questions and start core quiz =====
-    private void loadSubject(String subject) {
+    private void loadCoreSubject(String subject) {
         // Pick the correct question set based on which subject was selected
         if (subject.equals("Maths")) {
-            currentQuestions = QuizData.getMathsQuestions();
+            currentQuestions = QuizData.getMathsQs();
         } else if (subject.equals("Biology")) {
-            currentQuestions = QuizData.getBiologyQuestions();
+            currentQuestions = QuizData.getBiologyQs();
         } else if (subject.equals("Physics")) {
-            currentQuestions = QuizData.getPhysicsQuestions();
+            currentQuestions = QuizData.getPhysicsQs();
         }
 
         // Reset progress for this quiz
@@ -154,7 +149,7 @@ public class QuizGUI extends javax.swing.JFrame {
         }
 
         // Show the first question
-        showCurrentQuestion();
+        showCurrentCoreQ();
 
         // Reset and start core timer
         if (timer != null) {
@@ -168,11 +163,11 @@ public class QuizGUI extends javax.swing.JFrame {
     private void loadSideSubject(String subject) {
         // Pick the correct question set for the side quiz based on subject
         if (subject.equals("CS")) {
-            sideQuestions = QuizData.getComputerScienceQuestions();
+            sideQuestions = QuizData.getComputerScienceQs();
         } else if (subject.equals("Chemistry")) {
-            sideQuestions = QuizData.getChemistryQuestions();
+            sideQuestions = QuizData.getChemistryQs();
         } else if (subject.equals("Maths")) {
-            sideQuestions = QuizData.getSideMathsQuestions();
+            sideQuestions = QuizData.getSideMathsQs();
         }
 
         // Reset progress for side quiz
@@ -194,11 +189,11 @@ public class QuizGUI extends javax.swing.JFrame {
         }
 
         // Show the first side question
-        showCurrentSideQuestion();
+        showCurrentSideQ();
     }
 
     // ===== Show current core question or final result =====
-    private void showCurrentQuestion() {
+    private void showCurrentCoreQ() {
         // No questions loaded (e.g. subject not chosen)
         if (currentQuestions == null || totalQuestions == 0) {
             DisplayTA.setText("No questions for this subject.");
@@ -236,7 +231,7 @@ public class QuizGUI extends javax.swing.JFrame {
     }
 
     // ===== Show current side question or final result =====
-    private void showCurrentSideQuestion() {
+    private void showCurrentSideQ() {
         // No questions loaded for side quiz
         if (sideQuestions == null || sideTotalQuestions == 0) {
             DisplayTA1.setText("No questions for this subject.");
@@ -417,7 +412,7 @@ public class QuizGUI extends javax.swing.JFrame {
         OptionCTF = new javax.swing.JTextField();
         CorrectLBL = new javax.swing.JLabel();
         CorrectCB = new javax.swing.JComboBox<>();
-        AddModifyQsBTN = new javax.swing.JButton();
+        AddUpdateQsBTN = new javax.swing.JButton();
         SearchQuestionBTN = new javax.swing.JButton();
         DeleteQuestionBTN = new javax.swing.JButton();
         ClearBTN = new javax.swing.JButton();
@@ -449,14 +444,13 @@ public class QuizGUI extends javax.swing.JFrame {
         CoreNavPNLLayout.setHorizontalGroup(
             CoreNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CoreNavPNLLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(CoreNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CoreNavPNLLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(CoreNavLBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CoreNavIcon))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(CoreNavLBL)
+                .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CoreNavPNLLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CoreNavIcon)
+                .addGap(16, 16, 16))
         );
         CoreNavPNLLayout.setVerticalGroup(
             CoreNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,14 +481,13 @@ public class QuizGUI extends javax.swing.JFrame {
         SideNavPNLLayout.setHorizontalGroup(
             SideNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SideNavPNLLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(SideNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(SideNavPNLLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(SideNavLBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(SideNavIcon))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(SideNavLBL)
+                .addContainerGap(39, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SideNavPNLLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SideNavIcon)
+                .addGap(16, 16, 16))
         );
         SideNavPNLLayout.setVerticalGroup(
             SideNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -524,15 +517,15 @@ public class QuizGUI extends javax.swing.JFrame {
         EditNavPNL.setLayout(EditNavPNLLayout);
         EditNavPNLLayout.setHorizontalGroup(
             EditNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditNavPNLLayout.createSequentialGroup()
+            .addGroup(EditNavPNLLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(EditNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(EditNavPNLLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditNavPNLLayout.createSequentialGroup()
+                        .addComponent(EditNavIcon)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditNavPNLLayout.createSequentialGroup()
                         .addComponent(EditNavLBL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(EditNavIcon))
-                .addGap(17, 17, 17))
+                        .addGap(40, 40, 40))))
         );
         EditNavPNLLayout.setVerticalGroup(
             EditNavPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -923,13 +916,10 @@ public class QuizGUI extends javax.swing.JFrame {
         TitlePNL2Layout.setVerticalGroup(
             TitlePNL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TitlePNL2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TitlePNL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LogoLBL2)
-                    .addGroup(TitlePNL2Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(TitleLBL2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(17, 17, 17)
+                .addComponent(TitleLBL2)
+                .addContainerGap(15, Short.MAX_VALUE))
+            .addComponent(LogoLBL2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         EditPNL.add(TitlePNL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 160, 80));
@@ -1055,15 +1045,15 @@ public class QuizGUI extends javax.swing.JFrame {
         CorrectCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C" }));
         EditPNL.add(CorrectCB, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
 
-        AddModifyQsBTN.setBackground(new java.awt.Color(0, 0, 0));
-        AddModifyQsBTN.setForeground(new java.awt.Color(255, 255, 255));
-        AddModifyQsBTN.setText("Add/Modify");
-        AddModifyQsBTN.addActionListener(new java.awt.event.ActionListener() {
+        AddUpdateQsBTN.setBackground(new java.awt.Color(0, 0, 0));
+        AddUpdateQsBTN.setForeground(new java.awt.Color(255, 255, 255));
+        AddUpdateQsBTN.setText("Add/Update");
+        AddUpdateQsBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddModifyQsBTNActionPerformed(evt);
+                AddUpdateQsBTNActionPerformed(evt);
             }
         });
-        EditPNL.add(AddModifyQsBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        EditPNL.add(AddUpdateQsBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
         SearchQuestionBTN.setBackground(new java.awt.Color(0, 0, 0));
         SearchQuestionBTN.setForeground(new java.awt.Color(255, 255, 255));
@@ -1157,16 +1147,16 @@ public class QuizGUI extends javax.swing.JFrame {
         QuizData.Question current = currentQuestions[currentQuestionIndex];
 
         // If user answer matches the correct letter, increase score
-        if (selectedAnswer == current.getCorrectAnswer()) {
+        if (selectedAnswer == current.getCorrectAns()) {
             score++;
         }
 
         // Move to next question and refresh display
         currentQuestionIndex++;
-        showCurrentQuestion();
+        showCurrentCoreQ();
     }//GEN-LAST:event_AnswerBTNActionPerformed
 
-    private void AddModifyQsBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddModifyQsBTNActionPerformed
+    private void AddUpdateQsBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddUpdateQsBTNActionPerformed
         // TODO add your handling code here:
         // Read and validate ID
         String idText = QuestionIDTF.getText().trim();
@@ -1183,6 +1173,7 @@ public class QuizGUI extends javax.swing.JFrame {
             return;
         }
 
+        // Get users input
         String subject = (String) SubjectCB.getSelectedItem();
         String questionText = QuestionTA3.getText().trim();
         String optionA = OptionATF.getText().trim();
@@ -1227,46 +1218,47 @@ public class QuizGUI extends javax.swing.JFrame {
             }
         }
 
-    }//GEN-LAST:event_AddModifyQsBTNActionPerformed
+    }//GEN-LAST:event_AddUpdateQsBTNActionPerformed
 
     private void SearchQuestionBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchQuestionBTNActionPerformed
         // TODO add your handling code here:
 
-        String idText = QuestionIDTF.getText().trim();
+        String idText = QuestionIDTF.getText().trim();   // get ID text from field
         if (idText.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please enter a Question ID to search.");
-            return;
+            return;     // stop if empty
         }
 
         int id;
         try {
-            id = Integer.parseInt(idText);
+            id = Integer.parseInt(idText);   // convert text → number
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Question ID must be a number.");
-            return;
+            return;     // stop if invalid
         }
 
-        String subject = (String) SubjectCB.getSelectedItem();
+        String subject = (String) SubjectCB.getSelectedItem();   // get chosen subject
         if (subject == null || subject.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please select a subject.");
-            return;
+            return;     // stop if no subject selected
         }
 
-        QuizData.Question q = QuizData.findQuestion(id, subject);
+        QuizData.Question q = QuizData.findQuestion(id, subject); // search for matching question
 
         if (q == null) {
-            ManageDisplayTA.setText("No question found with ID: " + id);
+            ManageDisplayTA.setText("No question found with ID: " + id);  // no match
         } else {
-            // Fill fields with the found question
+            // Put found question back into the text fields
             SubjectCB.setSelectedItem(q.getSubject());
             QuestionTA3.setText(q.getQuestion());
             OptionATF.setText(q.getOptionA());
             OptionBTF.setText(q.getOptionB());
             OptionCTF.setText(q.getOptionC());
 
-            String correctText = String.valueOf(q.getCorrectAnswer()); // "A","B","C"
+            String correctText = String.valueOf(q.getCorrectAns());
             CorrectCB.setSelectedItem(correctText);
 
+            // Build a readable summary to show
             String result = "Question found:\n\n";
             result = result + "ID: " + q.getId() + "\n";
             result = result + "Subject: " + q.getSubject() + "\n";
@@ -1274,9 +1266,9 @@ public class QuizGUI extends javax.swing.JFrame {
             result = result + "A) " + q.getOptionA() + "\n";
             result = result + "B) " + q.getOptionB() + "\n";
             result = result + "C) " + q.getOptionC() + "\n";
-            result = result + "Correct: " + q.getCorrectAnswer() + "\n";
+            result = result + "Correct: " + q.getCorrectAns() + "\n";
 
-            ManageDisplayTA.setText(result);
+            ManageDisplayTA.setText(result);  // show it in output area
         }
     }//GEN-LAST:event_SearchQuestionBTNActionPerformed
 
@@ -1284,6 +1276,7 @@ public class QuizGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         String idText = QuestionIDTF.getText().trim();
+        // Make sure user typed something for the ID
         if (idText.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please enter a Question ID to delete.");
             return;
@@ -1291,30 +1284,37 @@ public class QuizGUI extends javax.swing.JFrame {
 
         int id;
         try {
+            // Convert ID text to a number
             id = Integer.parseInt(idText);
         } catch (NumberFormatException ex) {
+            // If conversion fails, ID wasn't a number
             JOptionPane.showMessageDialog(this, "Question ID must be a number.");
             return;
         }
 
         String subject = (String) SubjectCB.getSelectedItem();
+        // Make sure a subject was chosen
         if (subject == null || subject.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please select a subject.");
             return;
         }
 
+        // Attempt to delete the question from questionBank
         boolean deleted = QuizData.deleteQuestion(id, subject);
 
         if (deleted) {
+            // Show success message
             ManageDisplayTA.setText("Question with ID " + id + " deleted.");
 
-            // clear input fields
+            // Clear the input fields
             QuestionTA3.setText("");
             OptionATF.setText("");
             OptionBTF.setText("");
             OptionCTF.setText("");
             CorrectCB.setSelectedIndex(0);
+
         } else {
+            // If no match found, show message
             ManageDisplayTA.setText("No question found with ID: " + id);
         }
     }//GEN-LAST:event_DeleteQuestionBTNActionPerformed
@@ -1393,13 +1393,13 @@ public class QuizGUI extends javax.swing.JFrame {
         QuizData.Question current = sideQuestions[sideCurrentQuestionIndex];
 
         // Increase side quiz score if correct
-        if (selectedAnswer == current.getCorrectAnswer()) {
+        if (selectedAnswer == current.getCorrectAns()) {
             sideScore++;
         }
 
         // Go to next side question
         sideCurrentQuestionIndex++;
-        showCurrentSideQuestion();
+        showCurrentSideQ();
     }//GEN-LAST:event_AnswerBTN1ActionPerformed
 
     private void MainMenuBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MainMenuBTNMouseClicked
@@ -1448,7 +1448,7 @@ public class QuizGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddModifyQsBTN;
+    private javax.swing.JButton AddUpdateQsBTN;
     private javax.swing.JRadioButton AnswerARB;
     private javax.swing.JRadioButton AnswerARB1;
     private javax.swing.JRadioButton AnswerBRB;
