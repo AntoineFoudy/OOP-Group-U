@@ -16,20 +16,20 @@ import javax.swing.JOptionPane;
 public class QuizGUI extends javax.swing.JFrame {
 
     // ===== Core quiz fields (Maths / Biology / Physics) =====
-    private Timer timer;                         // Timer for core quiz tab
-    private int remainingSeconds = 30;           // Time left for core quiz (seconds)
-    private QuizData.Question[] currentQuestions;// Array of questions for selected core subject
-    private int currentQuestionIndex = 0;        // Index of current question in core quiz
-    private int score = 0;                       // Player score for core quiz
-    private int totalQuestions = 0;              // Number of questions in current core quiz
+    private Timer coreTimer;                         // Timer for core quiz tab
+    private int coreRemainingSec = 30;           // Time left for core quiz (seconds)
+    private QuizData.Question[] coreCurrentQs;// Array of questions for selected core subject
+    private int coreCurrentQIndex = 0;        // Index of current question in core quiz
+    private int coreScore = 0;                       // Player score for core quiz
+    private int coreTotalQs = 0;              // Number of questions in current core quiz
 
     // ===== Side quiz fields (CompSci / Chemistry / Mathematics) =====
     private Timer sideTimer;                     // Timer for side quiz tab
-    private int sideRemainingSeconds = 30;       // Time left for side quiz (seconds)
-    private QuizData.Question[] sideQuestions;   // Array of questions for selected side subject
-    private int sideCurrentQuestionIndex = 0;    // Index of current question in side quiz
+    private int sideRemainingSec = 30;       // Time left for side quiz (seconds)
+    private QuizData.Question[] sideQs;   // Array of questions for selected side subject
+    private int sideCurrentQIndex = 0;    // Index of current question in side quiz
     private int sideScore = 0;                   // Player score for side quiz
-    private int sideTotalQuestions = 0;          // Number of questions in current side quiz
+    private int sideTotalQs = 0;          // Number of questions in current side quiz
     
     /**
      * Creates new form QuizGUI2
@@ -55,24 +55,24 @@ public class QuizGUI extends javax.swing.JFrame {
     // ===== Core timer (for core quiz) =====
     private void initTimer() {
         // Timer is every 1000ms (1 second)
-        timer = new Timer(1000, new ActionListener() {
+        coreTimer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                remainingSeconds--;  // count down
+                coreRemainingSec--;  // count down
 
-                if (remainingSeconds >= 0) {
-                    int minutes = remainingSeconds / 60;
-                    int seconds = remainingSeconds % 60;
+                if (coreRemainingSec >= 0) {
+                    int minutes = coreRemainingSec / 60;
+                    int seconds = coreRemainingSec % 60;
 
                     // Show remaining time in m:ss format, e.g. 0:25
                     TimerTA.setText(String.format("%d:%02d", minutes, seconds));
                 }
 
                 // When core quiz time runs out
-                if (remainingSeconds <= 0) {
-                    timer.stop();
+                if (coreRemainingSec <= 0) {
+                    coreTimer.stop();
 
-                    String result = "Time's up!\n\nYour score: " + score + " out of " + totalQuestions;
+                    String result = "Time's up!\n\nYour score: " + coreScore + " out of " + coreTotalQs;
 
                     // Show final result and clear selected answers
                     DisplayTA.setText(result);
@@ -88,21 +88,21 @@ public class QuizGUI extends javax.swing.JFrame {
         sideTimer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                sideRemainingSeconds--;  // count down
+                sideRemainingSec--;  // count down
 
-                if (sideRemainingSeconds >= 0) {
-                    int minutes = sideRemainingSeconds / 60;
-                    int seconds = sideRemainingSeconds % 60;
+                if (sideRemainingSec >= 0) {
+                    int minutes = sideRemainingSec / 60;
+                    int seconds = sideRemainingSec % 60;
 
                     // Show remaining time in m:ss format for side quiz
                     TimerTA1.setText(String.format("%d:%02d", minutes, seconds));
                 }
 
                 // When side quiz time runs out
-                if (sideRemainingSeconds <= 0) {
+                if (sideRemainingSec <= 0) {
                     sideTimer.stop();
 
-                    String result = "Time's up!\n\nYour score: " + score + " out of " + totalQuestions;
+                    String result = "Time's up!\n\nYour score: " + sideScore + " out of " + sideTotalQs;
 
                     // Show final result and clear selected answers
                     DisplayTA1.setText(result);
@@ -131,31 +131,31 @@ public class QuizGUI extends javax.swing.JFrame {
     private void loadCoreSubject(String subject) {
         // Pick the correct question set based on which subject was selected
         if (subject.equals("Maths")) {
-            currentQuestions = QuizData.getMathsQs();
+            coreCurrentQs = QuizData.getMathsQs();
         } else if (subject.equals("Biology")) {
-            currentQuestions = QuizData.getBiologyQs();
+            coreCurrentQs = QuizData.getBiologyQs();
         } else if (subject.equals("Physics")) {
-            currentQuestions = QuizData.getPhysicsQs();
+            coreCurrentQs = QuizData.getPhysicsQs();
         }
 
         // Reset progress for this quiz
-        currentQuestionIndex = 0;
-        score = 0;
+        coreCurrentQIndex = 0;
+        coreScore = 0;
 
-        if (currentQuestions != null) {
-            totalQuestions = currentQuestions.length;
+        if (coreCurrentQs != null) {
+            coreTotalQs = coreCurrentQs.length;
         } else {
-            totalQuestions = 0;
+            coreTotalQs = 0;
         }
 
         // Show the first question
         showCurrentCoreQ();
 
         // Reset and start core timer
-        if (timer != null) {
-            remainingSeconds = 30;
+        if (coreTimer != null) {
+            coreRemainingSec = 30;
             TimerTA.setText("0:30");
-            timer.start();
+            coreTimer.start();
         }
     }
 
@@ -163,25 +163,25 @@ public class QuizGUI extends javax.swing.JFrame {
     private void loadSideSubject(String subject) {
         // Pick the correct question set for the side quiz based on subject
         if (subject.equals("CS")) {
-            sideQuestions = QuizData.getComputerScienceQs();
+            sideQs = QuizData.getComputerScienceQs();
         } else if (subject.equals("Chemistry")) {
-            sideQuestions = QuizData.getChemistryQs();
+            sideQs = QuizData.getChemistryQs();
         } else if (subject.equals("Maths")) {
-            sideQuestions = QuizData.getSideMathsQs();
+            sideQs = QuizData.getSideMathsQs();
         }
 
         // Reset progress for side quiz
-        sideCurrentQuestionIndex = 0;
+        sideCurrentQIndex = 0;
         sideScore = 0;
 
-        if (sideQuestions != null) {
-            sideTotalQuestions = sideQuestions.length;
+        if (sideQs != null) {
+            sideTotalQs = sideQs.length;
         } else {
-            sideTotalQuestions = 0;
+            sideTotalQs = 0;
         }
 
         // Reset and start side timer
-        sideRemainingSeconds = 30;
+        sideRemainingSec = 30;
         TimerTA1.setText("0:30");
 
         if (sideTimer != null) {
@@ -195,16 +195,16 @@ public class QuizGUI extends javax.swing.JFrame {
     // ===== Show current core question or final result =====
     private void showCurrentCoreQ() {
         // No questions loaded (e.g. subject not chosen)
-        if (currentQuestions == null || totalQuestions == 0) {
+        if (coreCurrentQs == null || coreTotalQs == 0) {
             DisplayTA.setText("No questions for this subject.");
             return;
         }
 
         // If there are still questions left, show the current one
-        if (currentQuestionIndex < totalQuestions) {
-            QuizData.Question q = currentQuestions[currentQuestionIndex];
+        if (coreCurrentQIndex < coreTotalQs) {
+            QuizData.Question q = coreCurrentQs[coreCurrentQIndex];
 
-            String text = "Question " + (currentQuestionIndex + 1) + " of " + totalQuestions + ":\n\n";
+            String text = "Question " + (coreCurrentQIndex + 1) + " of " + coreTotalQs + ":\n\n";
             text = text + q.getQuestion() + "\n\n";
             text = text + "A) " + q.getOptionA() + "\n";
             text = text + "B) " + q.getOptionB() + "\n";
@@ -218,12 +218,12 @@ public class QuizGUI extends javax.swing.JFrame {
 
         } else {
             // All questions answered: end core quiz
-            if (timer != null && timer.isRunning()) {
-                timer.stop();
+            if (coreTimer != null && coreTimer.isRunning()) {
+                coreTimer.stop();
             }
 
             String result = "Quiz finished!\n\n";
-            result = result + "Your score: " + score + " out of " + totalQuestions;
+            result = result + "Your score: " + coreScore + " out of " + coreTotalQs;
 
             DisplayTA.setText(result);
             AnswersBG.clearSelection();
@@ -233,16 +233,16 @@ public class QuizGUI extends javax.swing.JFrame {
     // ===== Show current side question or final result =====
     private void showCurrentSideQ() {
         // No questions loaded for side quiz
-        if (sideQuestions == null || sideTotalQuestions == 0) {
+        if (sideQs == null || sideTotalQs == 0) {
             DisplayTA1.setText("No questions for this subject.");
             return;
         }
 
         // If there are still side questions left, show the current one
-        if (sideCurrentQuestionIndex < sideTotalQuestions) {
-            QuizData.Question q = sideQuestions[sideCurrentQuestionIndex];
+        if (sideCurrentQIndex < sideTotalQs) {
+            QuizData.Question q = sideQs[sideCurrentQIndex];
 
-            String text = "Question " + (sideCurrentQuestionIndex + 1) + " of " + sideTotalQuestions + ":\n\n";
+            String text = "Question " + (sideCurrentQIndex + 1) + " of " + sideTotalQs + ":\n\n";
             text = text + q.getQuestion() + "\n\n";
             text = text + "A) " + q.getOptionA() + "\n";
             text = text + "B) " + q.getOptionB() + "\n";
@@ -261,7 +261,7 @@ public class QuizGUI extends javax.swing.JFrame {
             }
 
             String result = "Side quiz finished!\n\n";
-            result = result + "Your score: " + sideScore + " out of " + sideTotalQuestions;
+            result = result + "Your score: " + sideScore + " out of " + sideTotalQs;
 
             DisplayTA1.setText(result);
             AnswersBG.clearSelection();
@@ -271,18 +271,18 @@ public class QuizGUI extends javax.swing.JFrame {
     // ===== Reset core quiz when tab changes or exiting =====
     private void resetCoreQuiz() {
         // Stop core timer if running
-        if (timer != null && timer.isRunning()) {
-            timer.stop();
+        if (coreTimer != null && coreTimer.isRunning()) {
+            coreTimer.stop();
         }
 
         // Reset time display and counters
-        remainingSeconds = 30;
+        coreRemainingSec = 30;
         TimerTA.setText("0:30");
 
-        currentQuestions = null;
-        currentQuestionIndex = 0;
-        score = 0;
-        totalQuestions = 0;
+        coreCurrentQs = null;
+        coreCurrentQIndex = 0;
+        coreScore = 0;
+        coreTotalQs = 0;
 
         // Clear questions and selections
         DisplayTA.setText("");
@@ -304,13 +304,13 @@ public class QuizGUI extends javax.swing.JFrame {
         }
 
         // Reset time display and side quiz counters
-        sideRemainingSeconds = 30;
+        sideRemainingSec = 30;
         TimerTA1.setText("0:30");
 
-        sideQuestions = null;
-        sideCurrentQuestionIndex = 0;
+        sideQs = null;
+        sideCurrentQIndex = 0;
         sideScore = 0;
-        sideTotalQuestions = 0;
+        sideTotalQs = 0;
 
         // Clear questions and selections
         DisplayTA1.setText("");
@@ -1124,7 +1124,7 @@ public class QuizGUI extends javax.swing.JFrame {
     private void AnswerBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnswerBTNActionPerformed
         // TODO add your handling code here:
         // If no subject is selected or quiz already finished, do nothing
-        if (currentQuestions == null || currentQuestionIndex >= totalQuestions) {
+        if (coreCurrentQs == null || coreCurrentQIndex >= coreTotalQs) {
             return;
         }
 
@@ -1144,15 +1144,15 @@ public class QuizGUI extends javax.swing.JFrame {
         }
 
         // Get the current question object
-        QuizData.Question current = currentQuestions[currentQuestionIndex];
+        QuizData.Question current = coreCurrentQs[coreCurrentQIndex];
 
         // If user answer matches the correct letter, increase score
         if (selectedAnswer == current.getCorrectAns()) {
-            score++;
+            coreScore++;
         }
 
         // Move to next question and refresh display
-        currentQuestionIndex++;
+        coreCurrentQIndex++;
         showCurrentCoreQ();
     }//GEN-LAST:event_AnswerBTNActionPerformed
 
@@ -1370,7 +1370,7 @@ public class QuizGUI extends javax.swing.JFrame {
     private void AnswerBTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnswerBTN1ActionPerformed
         // TODO add your handling code here
         // If side subject is not selected or quiz finished, do nothing
-        if (sideQuestions == null || sideCurrentQuestionIndex >= sideTotalQuestions) {
+        if (sideQs == null || sideCurrentQIndex >= sideTotalQs) {
             return;
         }
 
@@ -1390,7 +1390,7 @@ public class QuizGUI extends javax.swing.JFrame {
         }
 
         // Get current side question
-        QuizData.Question current = sideQuestions[sideCurrentQuestionIndex];
+        QuizData.Question current = sideQs[sideCurrentQIndex];
 
         // Increase side quiz score if correct
         if (selectedAnswer == current.getCorrectAns()) {
@@ -1398,7 +1398,7 @@ public class QuizGUI extends javax.swing.JFrame {
         }
 
         // Go to next side question
-        sideCurrentQuestionIndex++;
+        sideCurrentQIndex++;
         showCurrentSideQ();
     }//GEN-LAST:event_AnswerBTN1ActionPerformed
 
