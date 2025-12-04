@@ -1,0 +1,28 @@
+## Types of Chemical Reactions
+1. Synthesis (Combination): A + B → AB
+2. Decomposition: AB → A + B
+3. Single Displacement: A + BC → AC + B
+4. Double Displacement: AB + CD → AD + CB
+5. Combustion: Hydrocarbon + O2 → CO2 + H2O
+
+## Balancing Chemical Equations
+- Ensure number of atoms on reactants = products.
+- Use coefficients to balance the equation.
+- Practice is key to mastering balancing.
+
+## Acids, Bases, and pH
+- Acid: Releases H+ ions in water (e.g., HCl).
+- Base: Releases OH- ions in water (e.g., NaOH).
+- pH scale: Measures acidity/alkalinity (0-14), 7 = neutral.
+
+## Energy in Reactions
+- Exothermic: Releases energy (e.g., combustion).
+- Endothermic: Absorbs energy (e.g., photosynthesis).
+- Activation energy: Minimum energy required for reaction.
+
+## Catalysts
+- Substances that speed up reactions without being consumed.
+- Examples: Enzymes in biological reactions, metal catalysts in industry.
+
+## Summary
+Understanding reaction types, energy changes, and pH is essential to study and apply chemistry in real-world scenarios.
