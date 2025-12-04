@@ -235,6 +235,11 @@ public class FlashcardFrame extends javax.swing.JFrame {
         });
 
         delete_flashcard_btn.setText("Delete Flashcard Set");
+        delete_flashcard_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_flashcard_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -485,6 +490,7 @@ public class FlashcardFrame extends javax.swing.JFrame {
 
     private void view_flashcard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_flashcard_btnActionPerformed
         jpanel_flashcard.setSelectedIndex(5);
+        this.display_text_btn.setText("Question");
     }//GEN-LAST:event_view_flashcard_btnActionPerformed
 
     private void edit_flashcard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_flashcard_btnActionPerformed
@@ -526,7 +532,6 @@ public class FlashcardFrame extends javax.swing.JFrame {
 
 // Displaying the next Indexed Flashcard in a Set, Error Handaling for if Index does not exsit
     private void next_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_next_btnActionPerformed
-        // TODO add your handling code here:
         if(flashcard_index < flashcard_index_max -1) {
             this.flashcard_index = flashcard_index + 1;
             display_text_btn.setText(this.view_answer.get(this.flashcard_index));
@@ -600,6 +605,10 @@ public class FlashcardFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_del_flashcard_btnActionPerformed
 
+    private void delete_flashcard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_flashcard_btnActionPerformed
+        jpanel_flashcard.setSelectedIndex(4);
+    }//GEN-LAST:event_delete_flashcard_btnActionPerformed
+
     public void delete_these_set(ArrayList<String> delete_set) throws FileNotFoundException {
         flashcardlogic.DeleteFlashcard fcdfc = new flashcardlogic.DeleteFlashcard(delete_set);
     }
@@ -617,8 +626,9 @@ public class FlashcardFrame extends javax.swing.JFrame {
         this.view_answer = new ArrayList<String>(fcvfc.get_flashcard_answer());
         
         this.flashcard_index_max = view_question.size();
-        
-        display_text_btn.setText(view_question.get(flashcard_index)); 
+        this.flashcard_index = 0;
+
+        display_text_btn.setText(view_question.get(flashcard_index));  
     }
     
     public void flashcard_set() throws FileNotFoundException {
