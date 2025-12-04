@@ -1,5 +1,0 @@
-Here are some problem solving notes...
-1. Break the problem into smaller parts.
-2. Analyze causes before fixing symptoms.
-3. Test different solutions.
-
