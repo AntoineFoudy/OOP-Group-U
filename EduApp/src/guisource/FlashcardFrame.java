@@ -235,6 +235,11 @@ public class FlashcardFrame extends javax.swing.JFrame {
         });
 
         delete_flashcard_btn.setText("Delete Flashcard Set");
+        delete_flashcard_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_flashcard_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -527,7 +532,7 @@ public class FlashcardFrame extends javax.swing.JFrame {
 // Displaying the next Indexed Flashcard in a Set, Error Handaling for if Index does not exsit
     private void next_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_next_btnActionPerformed
         // TODO add your handling code here:
-        if(flashcard_index != flashcard_index_max) {
+        if(flashcard_index < flashcard_index_max -1) {
             this.flashcard_index = flashcard_index + 1;
             display_text_btn.setText(this.view_answer.get(this.flashcard_index));
             display_text_btn.setText(this.view_question.get(this.flashcard_index));
@@ -600,6 +605,10 @@ public class FlashcardFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_del_flashcard_btnActionPerformed
 
+    private void delete_flashcard_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_flashcard_btnActionPerformed
+        jpanel_flashcard.setSelectedIndex(4);
+    }//GEN-LAST:event_delete_flashcard_btnActionPerformed
+
     public void delete_these_set(ArrayList<String> delete_set) throws FileNotFoundException {
         flashcardlogic.DeleteFlashcard fcdfc = new flashcardlogic.DeleteFlashcard(delete_set);
     }
@@ -607,6 +616,11 @@ public class FlashcardFrame extends javax.swing.JFrame {
     public void flashcardView(String flashcard_set_view) throws FileNotFoundException {
         
         flashcardlogic.ViewFlashcard fcvfc = new flashcardlogic.ViewFlashcard(flashcard_set_view);
+        // Removes perviously loaded flashcards
+        if(this.view_question != null) {
+            this.view_question.clear();
+            this.view_answer.clear();
+        }
         
         this.view_question = new ArrayList<String>(fcvfc.get_flashcard_question());
         this.view_answer = new ArrayList<String>(fcvfc.get_flashcard_answer());
